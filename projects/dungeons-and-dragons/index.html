@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dungeons and Dragons</title>
+    <script src="js/game.js"></script>
+    <link rel="stylesheet" href="css/screen.css"/>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="login_holder">
+    <div>
+        <h1>Login</h1>
+        <ul>
+            <li>
+                <input type="text" placeholder="Gebruikersnaam" id="txt_username"/>
+            </li>
+            <li>
+                <input type="password" placeholder="Wachtwoord" id="txt_password"/>
+            </li>
+            <li>
+                <input type="button" value="Inloggen" id="btn_login"/>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="choose_race_class">
+    <div>
+        <h1>Wie ben jij, stranger?</h1>
+        <h2>Welk ras ben je?</h2>
+        <ul id="race"></ul>
+        <h2>Tot welke klasse behoor je?</h2>
+        <ul id="class"></ul>
+        <div id="btn_race_class">Begin het avontuur >></div>
+    </div>
+</div>
+<div id="game_area">
+    <header>
+        <div id="user_info"></div>
+        <div id="logout" class="button">
+            Uitloggen
+        </div>
+    </header>
+    <div id="show_admin">
+        <div id="admin_user"></div>
+        <div class="admin_button" id="next_turn">Volgende beurt</div>
+        <div class="admin_button" id="random_items">Random items</div>
+        <div id="admin_panel">
+            <div id="admin_tabs">
+                <ul>
+                    <li id="admin_one" class="active">Gebruikers</li>
+                    <li id="admin_two">Nieuwe gebruiker</li>
+                    <li id="admin_three">Basic</li>
+                    <li id="admin_four">Items</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div id="admin_tab_one" class="admin_tab"></div>
+<div id="admin_tab_two" class="admin_tab">
+    <ul>
+        <li>
+            <input type="text" placeholder="Gebruikersnaam" id="txt_new_username"/>
+        </li>
+        <li>
+            <input type="password" placeholder="Wachtwoord" id="txt_new_password"/>
+        </li>
+        <li>
+            <input type="button" value="Registreer" id="btn_register"/>
+        </li>
+    </ul>
+</div>
+<div id="admin_tab_three" class="admin_tab"></div>
+<div id="admin_tab_four" class="admin_tab">
+    <div id="conditions"></div>
+    <div id="inventory"></div>
+</div>
+</div>
+</div>
+<div id="container">
+    <nav id="tabs">
+        <ul>
+            <li class="active" id="one">Basic</li>
+            <li id="two">Levelling & skills</li>
+            <li id="three">Shop</li>
+        </ul>
+    </nav>
+    <div class="clearfix"></div>
+    <div id="tab_one" class="tab_area">
+        <div class="col">
+            <div>
+                <h1>Basic data</h1>
+                <ul id="basic_data_list"></ul>
+            </div>
+            <div>
+                <h1>Conditions</h1>
+                <ul id="conditions_list"></ul>
+            </div>
+        </div>
+        <div class="col" id="last">
+            <div>
+                <h1>Inventory</h1>
+                <ul id="inventory_list"></ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div id="tab_two" class="tab_area">
+        <div class="col">
+            <div>
+                <h1>Monsters</h1>
+                <div id="monsters_list">
+
+                </div>
+            </div>
+        </div>
+        <div class="col" id="last_two">
+            <div>
+                <h1>Skills</h1>
+                Deze module is helaas niet afgewerkt. Donneer <b><big><a href="http://interbellum.cf/" target="_blank">hier</a></big></b> zo veel mogelijk geld om het ontwikkelproces te versnellen.
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div id="tab_three" class="tab_area">
+        <div class="big_col">
+            <div>
+                <h1>Goederen "nog niet klaar :("</h1>
+                <div id="shop_listing">
+                    <ul id="shop_one"></ul>
+                    <ul id="shop_two"></ul>
+                    <ul id="shop_three"></ul>
+                    <ul id="shop_four"></ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+</div>
+<div id="ping_info"></div>
+<div id="notifications"></div>
+</body>
+</html>

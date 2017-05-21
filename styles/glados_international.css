@@ -1,0 +1,70 @@
+/* International Relations */
+#internship{
+    background: linear-gradient(to bottom, #3c3f41 90%, transparent);
+    margin: 0 0 -85px 0;
+    padding-bottom: 90px;
+}
+
+#plane{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    margin: 50px 0;
+}
+
+.slideshow{
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow .slideshow-item{
+    width: 80%;
+}
+
+.slideshow-item{
+    display: none;
+}
+
+.slideshow-item.visible{
+    display: block;
+}
+
+.slideshow-item img{
+    max-width: 100%;
+}
+
+.slideshow-item p{
+    padding: 0;
+    margin: 0 -5% 25px;
+}
+
+.arrow{
+    max-width: 10%;
+    border: solid #f68739;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 4px;
+    cursor: pointer;
+    margin: -50% 6px 0 6px;
+}
+
+.arrow-left{
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.arrow-right{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}

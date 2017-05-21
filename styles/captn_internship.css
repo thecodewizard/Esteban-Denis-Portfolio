@@ -1,0 +1,65 @@
+header{
+    height: 50px;
+    background: #3c3f41;
+
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    text-align: left;
+
+    z-index: 10;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+body{
+    height: calc(100vh + 50px);
+}
+
+header p{
+    flex-grow: 2;
+    font-family: hero, sans-serif;
+    font-size: 1.25em;
+    line-height: 50px;
+}
+
+main{
+    /*To Improve Readability for the user*/
+    background: rgba(60,63,65,0.4);
+    margin: -50px 0 0;
+    padding: 100px 0 50px;
+}
+
+main section{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+main p{
+    font-family: hero, sans-serif;
+    text-align: center;
+    line-height: 1.2em;
+    padding: 0 20px;
+}
+
+.arrow{
+    margin: 0 25px;
+}
+
+aside{
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    margin: 25px 0 50px;
+}
+
+aside img{
+    max-height: 150px;
+}
+
+h3{
+    margin-top: 50px;
+}

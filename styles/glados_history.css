@@ -1,0 +1,88 @@
+/* History */
+#history{
+    margin-bottom: 50px;
+}
+
+#history > div{
+    width:100%;
+    height:100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    /*align-items:center;*/
+    align-items:flex-end;
+}
+
+.timeline{
+    width: 0;
+    border: 1px #f68739 solid;
+    margin: -75px 30px 0 0;
+    padding-top: 75px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.timeline + .timeline{
+    align-self: flex-start;
+    position: absolute;
+    margin: 0 18px;
+    height: 630px;
+}
+
+.timeline > div{
+    color: #dedede;
+    width: 300px;
+    line-height: 22px;
+    position: relative;
+    margin: 10px 0;
+    align-self: flex-end;
+}
+
+.timeline > div:last-child{
+    margin-bottom: 50px;
+}
+
+.timeline > div:nth-child(odd){
+    text-align: right;
+    align-self: flex-end;
+}
+
+.timeline > div:nth-child(odd) > p{
+    padding: 0 30px 11px 0;
+}
+
+.timeline > div:nth-child(odd) > div:first-child{
+    right: -7px;
+}
+
+.timeline > div:nth-child(even) > div:first-child{
+    left: -7px;
+}
+
+.timeline > div span{
+    font-size: 12px;
+    font-style: italic;
+    display: block;
+}
+
+.timeline > div > p{
+    font-size: 1.4em;
+    font-family: sans-serif;
+
+    display: inline-block;
+    padding: 0 5px 11px 30px;
+    border-bottom: 2px #f68739 dashed;
+}
+
+.timeline > div > div{
+    width: 10px;
+    height: 10px;
+    border: 2px #f68739 solid;
+    background: #f68739;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: -6px;
+}

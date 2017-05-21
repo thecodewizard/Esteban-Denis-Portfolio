@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- General Headers -->
+    <meta charset="UTF-8">
+    <title>Home - DungeonDex</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Google CDN -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- OWN FILES -->
+    <link rel="icon" href="./assets/icon.png" />
+    <link rel="stylesheet" href="css/dragonnest.css"/>
+    <script src="./js/dragonnest.js"></script>
+</head>
+<body data-page="index">
+<div class="navbar-wrapper">
+    <header class="container">
+        <nav class="navbar navbar-inverse navbar-fixed">
+            <div class="container-fluid">
+
+                <!-- Mobile Toggler -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation-head" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Expand DungeonDex Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">DungeonDex</a>
+                </div>
+
+                <!-- Navbar -->
+                <div class="collapse navbar-collapse" id="navigation-head">
+                    <div class="flexwrap">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="./hero/index.php">Make your hero</a>
+                            </li>
+                            <li>
+                                <a href="./arena/index.php">Arena</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-center">
+                            <li class="dropdown">
+                                <a href="./scrolls/index.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                    Mage Scrolls
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./scrolls/index.php"><b>All Scrolls</b></a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Choose Spells</li>
+                                    <li><a href="./scrolls/index.php#sort_school"><b>By School</b></a></li>
+                                    <li><a href="./scrolls/index.php#sort_class"><b>By Class</b></a></li>
+                                    <li><a href="./scrolls/index.php#sort_level"><b>By Level</b></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="./armoury/index.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                    Armoury
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./armoury/index.php"><b>All Weapons</b></a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Choose Weapon</li>
+                                    <li><a href="./armoury/index.php#sort_category"><b>By Category</b></a></li>
+                                    <li><a href="./armoury/index.php#sort_size"><b>By Size</b></a></li>
+                                    <li><a href="./armoury/index.php#sort_type"><b>By Type</b></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="./cave/index.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                    Monster Cave
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="./cave/index.php"><b>All Monsters</b></a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Choose Monsters</li>
+                                    <li><a href="./cave/index.php#sort_challenge"><b>By Challenge Rating</b></a></li>
+                                    <li><a href="./cave/index.php#sort_size"><b>By Size</b></a></li>
+                                    <li><a href="./cave/index.php#sort_type"><b>By Type</b></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+<main>
+    <div id="bg-slider" class="bg bg-full carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="item active" data-color="rgba(183, 0, 18, 0.54)">
+                <div class="media"></div>
+            </div>
+            <div class="item" data-color="rgba(76,174,76, 0.71)">
+                <div class="media"></div>
+            </div>
+            <div class="item" data-color="rgba(238,162,54, 0.54)">
+                <div class="media"></div>
+            </div>
+        </div>
+    </div>
+    <div id="title">
+        <div class="container">
+            <div class="slidebound active" data-slidenr="2">
+                <h1>Make your own Hero!</h1>
+                <p>
+                    Take up your sword and grab your Shield.<br/>Your opponent is ready. Are you?
+                </p>
+                <p>
+                    <a href="./hero/index.php" class="btn btn-warning btn-glados" role="button">Make Your hero!</a>
+                </p>
+            </div>
+            <div class="slidebound" data-slidenr="0">
+                <h1>Battle Foul Creatures!</h1>
+                <p>
+                    See brave heros and faul creatures fight.<br/>You have a voice. Might as well kill with it.
+                </p>
+                <p>
+                    <a href="./arena/index.php" class="btn btn-danger btn-glados" role="button">Visit The Arena!</a>
+                </p>
+            </div>
+            <div class="slidebound" data-slidenr="1">
+                <h1>Wisdom is power!</h1>
+                <p>
+                    Need A Weapon? Need A Scroll? Need an Enemy?<br/>Knowledge is the first step in conquering. Gather information.
+                </p>
+                <p>
+                    <a href="./armoury/index.php" class="btn btn-success btn-glados" role="button">Visit The Library!</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="navigation-body" class="container">
+        <section>
+            <article class="animo slidebound active" data-slidenr="2" data-slideto="0">
+                <h2>Be A Hero.</h2>
+                <p>Prepare yourself for your own battle.<br/>Create The Hero.<br/>Be The Hero.</p>
+                <a class="btn btn-default btn-outline" href="./hero/index.php" role="button">Make Your Hero</a>
+            </article>
+            <article class="animo slidebound" data-slidenr="0" data-slideto="1">
+                <h2>Watch 'em Fight.</h2>
+                <p>See brave heros and faul creatures fight each other in the Arena!<br/>You have a voice. Might as well kill with it.</p>
+                <a class="btn btn-default btn-outline" href="./arena/index.php" role="button">Visit The Arena</a>
+            </article>
+            <article class="animo slidebound" data-slidenr="1" data-slideto="2">
+                <h2>Watch and Learn</h2>
+                <p>Don't fight with the brutes. outsmart them.<br/>We have vast numbers of scrolls. You'll find what you need...</p>
+                <a class="btn btn-default btn-outline" href="./scrolls/index.php" role="button">Go To The Library</a>
+            </article>
+        </section>
+        <div id="follower" class="animo"></div>
+    </div>
+</main>
+<footer class="footer" data-page="index">
+    <div>
+        <p>Esteban Denis - DungeonDex - images are property of <a href="http://dnd.wizards.com">dnd Wizards</a></p>
+    </div>
+</footer>
+<!-- ADD SCRIPTS -->
+    <!-- JQuery CDN -->
+        <!-- production -->
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- development -->
+        <!--<script src="http://code.jquery.com/jquery-1.11.3.js"></script>-->
+
+        <!-- Bootstrap CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Load Own Scripts -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+            index.init();
+        });
+    </script>
+</body>
+</html>

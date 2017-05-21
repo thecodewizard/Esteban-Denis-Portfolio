@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- General Heads -->
+    <meta charset="UTF-8">
+    <title>Wheatley HomeSite</title>
+    <link rel="icon" href="images/icons/temp_icon.jpeg.jpg">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <!-- Stylesheets and Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/landing.css"/>
+
+    <!-- Scripts -->
+    <script src="js/landing.js"></script>
+    <script src="js/FireLib.js"></script>
+    <script src="js/sha512.js"></script>
+</head>
+<body>
+<div id="overlay">
+    <div id="loading_animation"></div>
+    <div id="message_success" hidden="hidden">
+        <h2>Message Successfully send</h2>
+        <p>Your message has been delivered. The system administrator will answer as quickly as possible.</p>
+        <p>Close this popup to continue surfing on WheatleyHomeSite.</p>
+    </div>
+    <div id="processing">
+        <h2>Processing request</h2>
+        <p>Please relax while our system handles your request.</p>
+        <div class="loadicon">
+            <div></div>
+            <div></div>
+        </div>
+        <p>Current status:</p>
+        <em id="status">Contacting Server</em><br/>
+    </div>
+    <div id="login" hidden="hidden">
+        <h2>Login</h2>
+        <form>
+            <div>
+                <label for="txt_username" id="lbl_username">Username</label><br/>
+                <input type="text" name="username" id="txt_username"/>
+            </div>
+            <div>
+                <label for="txt_password" id="lbl_password">Password</label><br/>
+                <input type="password" name="password" id="txt_password"/>
+            </div>
+            <div>
+                <label for="chk_remember" id="lbl_remember">Keep me logged in</label>
+                <input type="checkbox" name="remember_me" id="chk_remember" checked/>
+            </div>
+            <div class="btn disabled" id="btn_login">Log In</div>
+        </form>
+    </div>
+    <div id="contact" hidden="hidden">
+        <h2>Contact</h2>
+        <form>
+            <div>
+                <label for="txt_sender" id="lbl_sender">Your E-Mailadress</label><br/>
+                <input type="email" name="sender" id="txt_sender"/>
+            </div>
+            <div>
+                <label for="txt_subject" id="lbl_subject">Subject</label><br/>
+                <input type="text" name="subject" id="txt_subject"/>
+            </div>
+            <div>
+                <label for="txt_message" id="lbl_message">Your Message</label><br/>
+                <textarea name="message" id="txt_message"></textarea>
+            </div>
+            <div class="btn disabled" id="btn_send">Send Message</div>
+        </form>
+    </div>
+    <div id="register" hidden="hidden">
+        <h2>Pre-register</h2>
+        <form>
+            <div>
+                <label for="txt_reg_username" id="lbl_reg_username">Preferred Username</label><br/>
+                <input type="text" name="reg_username" id="txt_reg_username"/>
+            </div>
+            <div>
+                <label for="txt_reg_password" id="lbl_reg_password">Password</label><br/>
+                <input type="password" name="reg_password" id="txt_reg_password"/>
+            </div>
+            <div>
+                <label for="txt_reg_password_check" id="lbl_reg_password_check">Confirm Password</label><br/>
+                <input type="password" name="reg_password_check" id="txt_reg_password_check"/>
+            </div>
+            <div>
+                <label for="txt_reg_email" id="lbl_reg_email">Your E-Mailadress</label><br/>
+                <input type="email" name="reg_email" id="txt_reg_email"/>
+            </div>
+            <div class="btn disabled" id="btn_register">Apply Registration</div>
+        </form>
+    </div>
+    <span id="close">x</span>
+</div>
+<header>
+    <p>Wheatley HomeSite 2.0</p>
+    <div class="btn" id="headercontact">Contact</div>
+    <div class="btn" id="headerlogin">Login</div>
+</header>
+<div class="bg"></div>
+<main>
+    <section class="lander">
+        <article>
+            <div>
+                <h1>GLADOS welcomes you</h1>
+                <div class="btn" id="bannerlogin">
+                    Reserve Your Account Now!
+                </div>
+            </div>
+        </article>
+    </section>
+    <section>
+        <div id="placeholder">
+            <section id="section_whatsnew">
+                <a name="new"><h2>What's New</h2></a>
+                <article>
+                    <aside class="par">
+                        <div><img src="images/icons/rocket_icon.png" alt="test"/></div>
+                    </aside>
+                    <article>
+                        <h3>Wheatley Homesite 2.0 is launched!</h3>
+                        <p>Our programmers have worked their asses off and now it's finally here. An intensive commitment and a slight overdose on coffee brought you your very own new Homesite. <br/>
+                            New Functionality, New colors and more design than there ever was complete with the support for mobile devices.</p>
+                        <p>It has been a wicked ride for our one-man dev-team but we've got the feeling that we have succeeded in our mission. <br/>
+                            Stay a frequent visitor and follow up on the upcoming functionality changes.<br/>
+                            So i'd say: "Stay Tuned", we might surprise you one day.</p>
+                        <p>Greetings, the GLADOS Dev-team.</p>
+                    </article>
+                </article>
+                <article>
+                    <aside class="par">
+                        <div><img src="images/server_icon.png" alt="test"/></div>
+                    </aside>
+                    <article>
+                        <h3>The Site's new features have arrived</h3>
+                        <p>There are some new features in the WheatleyHomeSite 2.0, including these:</p>
+                        <ul>
+                            <li>Registered User Accounts</li>
+                            <li>Mobile Support</li>
+                            <li>Support for Internet Explorer (up until IE7)</li>
+                            <li>Contact Form</li>
+                        </ul>
+                        <p>Inevitably there will still be some errors in this site. Please sit back while GLADOS dev-team solves them. <br/>
+                            You can always leave a note in the contact form at the bottom of the page.</p>
+                    </article>
+                </article>
+            </section>
+            <section id="section_apply">
+                <a name="apply"><h2>Apply for Registration</h2></a>
+                <article>
+                    <aside class="par">
+                        <div><img src="images/person_icon.gif" alt="test"/></div>
+                    </aside>
+                    <article>
+                        <h3>Harness the full power of GLADOS</h3>
+                        <p>GLADOS has a lot more to offer than just a front-end website. Apply for registration and harness the full power
+                        of GLADOS and her servants.</p>
+                        <p>Wheatley offers the possibility to store and share sensitive content. Therefore an application is
+                        required in order to get an account. The User Application form can be accessed <a id="ref_register">here</a>.</p>
+                    </article>
+                </article>
+            </section>
+            <section id="section_about">
+                <a name="about"><h2>About</h2></a>
+                <article>
+                    <aside class="par">
+                        <div><img src="images/about_icon.png" alt="test"/></div>
+                    </aside>
+                    <article>
+                        <h3>Some Technical Information for Nerds</h3>
+                        <div>
+                            <p title="Current Commit - 1.1: The User Page (Dashboard) Environment">&copy; Wheatley Homesite - Version 1.1.8.2</p>
+                            <p>Last Updated on 19/08/2015 <span style="display:none; font-size: 0.9em; margin: 0 0 15px 20px;">(next forseen on 31/08/2015)</span></p>
+                            <div hidden="hidden" id="about_left">
+                                <p>Take a moment to visit our partners and past projects:</p>
+                                <ul>
+                                    <li><a href="http://interbellum.cf">Interbellum</a></li>
+                                    <li><a href="http://estebandenis.ddns.net/files/web">Explorers of the Galaxy</a></li>
+                                </ul>
+                            </div>
+                            <div><a id="toggle_details">Show details</a></div>
+                        </div>
+                        <div hidden="hidden" id="about_right">
+                            <p>Last Update improvements: </p>
+                            <ul>
+                                <li>'Add Request' completed. You can now add any media extention request!</li>
+                                <li>Server Side development in file system management</li>
+                            </ul>
+                        </div>
+                    </article>
+                </article>
+            </section>
+        </div>
+    </section>
+</main>
+<footer>
+    <div>
+        <p>Having questions or tips? Please contact us.</p>
+        <div class="btn" id="footercontact">Contact Us</div>
+    </div>
+    <p>This site is hosted on Wheatley  - Part of the GLADOS workgroup &copy; </p>
+</footer>
+</body>
+<script>
+    //Set the loaded event for this window.
+    window.addEventListener('DOMContentLoaded', function(){landing.init();});
+
+    //Improve responsiveness
+    landing.improveResponsiveness();
+</script>
+</html>
