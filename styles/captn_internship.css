@@ -1,3 +1,4 @@
+/* Internship HTML */
 header{
     height: 50px;
     background: #3c3f41;
@@ -62,4 +63,59 @@ aside img{
 
 h3{
     margin-top: 50px;
+}
+
+/* Changelog HTML */
+.changelog a{
+    color: #dedede;
+    text-decoration: none;
+    list-style: none;
+}
+
+.changelog h3{
+    margin: 10px 0;
+}
+
+.changelog .orb.hidden{
+    bottom: -50px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.changelog .orb{
+    height: 50px;
+    width: 50px;
+    opacity: 1;
+    z-index: 1000;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+
+    background: #f68739;
+
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    -webkit-transition: all ease-in-out 1s;
+    -moz-transition: all ease-in-out 1s;
+    -ms-transition: all ease-in-out 1s;
+    -o-transition: all ease-in-out 1s;
+    transition: all ease-in-out 1s;
+}
+
+.changelog .orb .arrow{
+    position: absolute;
+    top: 20px;
+    left: 19px;
+
+    margin: 0;
+    border-color: #3c3f41;
+}
+
+.future{
+    color: dodgerblue;
 }

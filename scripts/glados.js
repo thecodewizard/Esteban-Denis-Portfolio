@@ -10,11 +10,20 @@
     var arrow_left = document.getElementsByClassName('slideshow')[0].getElementsByClassName('arrow-left')[0];
     var arrow_right = document.getElementsByClassName('slideshow')[0].getElementsByClassName('arrow-right')[0];
     var circles = document.getElementsByClassName('circle');
+    var legal = document.getElementById('legal');
+    var pointer = document.getElementById('pointer');
+
+    // Global Variables
+    var clickCount = 0;
 
     //Functions
     function download_cv(){
         var w = window.open(cv_location, '_blank');
         w.focus();
+    }
+
+    function open_changelog(){
+        window.location.href = "./changelog.html";
     }
 
     function goto_next_slideshow_item(){
@@ -52,6 +61,9 @@
     }
 
     function show_showcase(circle){
+        // Manage Clickcount
+        manage_clickcount();
+
         // Check if the circle is currently open
         var open = circle.classList.contains('large');
 
@@ -73,15 +85,51 @@
         }
     }
 
-    //Event Listeners
-    btn_cv.addEventListener("click", function(){download_cv();}, false);
-    arrow_left.addEventListener("click", function(){goto_previous_slideshow_item();}, true);
-    arrow_right.addEventListener("click", function (){goto_next_slideshow_item();}, true);
+    function manage_clickcount(){
+        // Update the clickcount
+        clickCount++;
 
-    //Multiple Listeners
-    for(var i=0; i<circles.length; i++){
-        var circle = circles[i];
-        circles[i].addEventListener("click", function(){show_showcase(this.parentElement);}, true);
+        // Set the pointer
+        if(clickCount === 1){
+            pointer.innerHTML = "Good. Now click it again! <div></div>";
+        }
+        if(clickCount === 2){
+            pointer.innerHTML = "Ok, if you click <u>me</u> in the next 5 seconds, I'll disappear forever on this browser!<div></div>";
+            pointer.addEventListener("click", function(){
+                pointer.style.display = "none";
+                if(localStorage){
+                    localStorage.setItem("clicked", "true");
+                }
+            }, true);
+            setTimeout(function(){
+                pointer.style.opacity = 0;
+                setTimeout(function(){pointer.style.display = "none";}, 1000);
+            }, 7500);
+        }
     }
 
+    function startupScript(){
+        //Event Listeners
+        btn_cv.addEventListener("click", function(){download_cv();}, false);
+        arrow_left.addEventListener("click", function(){goto_previous_slideshow_item();}, true);
+        arrow_right.addEventListener("click", function (){goto_next_slideshow_item();}, true);
+        legal.addEventListener("click", function(){open_changelog();}, true);
+
+        //Multiple Listeners
+        for(var i=0; i<circles.length; i++){
+            circles[i].addEventListener("click", function(){show_showcase(this.parentElement);}, true);
+        }
+
+        // Execute Given Functions
+        if(localStorage){
+            if(localStorage.getItem('clicked') !== undefined && localStorage.getItem('clicked') === "true"){
+                pointer.style.display = "none";
+            } else {
+                pointer.style.display = "inline-block";
+            }
+        }
+    }
+
+    // Startup Functions
+    startupScript();
 })();

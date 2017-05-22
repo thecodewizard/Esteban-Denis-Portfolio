@@ -259,3 +259,42 @@
 .four-quarters-circle > div:nth-child(2){
     display: none;
 }
+
+/* Pointer */
+#pointer{
+    display: none;
+    border: 1px #f68739 solid;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.75em;
+    font-family: hero, sans-serif;
+    line-height: 20px;
+    position: relative;
+    margin: 0 65px;
+    padding: 2px 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all ease-in-out 1s;
+    -moz-transition: all ease-in-out 1s;
+    -ms-transition: all ease-in-out 1s;
+    -o-transition: all ease-in-out 1s;
+    transition: all ease-in-out 1s;
+}
+
+#pointer div{
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    background: #3c3f41;
+    border-left: 1px #f68739 solid;
+    border-bottom: 1px #f68739 solid;
+    bottom: -4px;
+    left: 10px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}

@@ -272,3 +272,24 @@ article p{
 .btn span{
     font-weight: normal;
 }
+
+/* Listings */
+ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+li{
+    color: #D7D7D7;
+    font-family: hero, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px #f68739 solid;
+    border-radius: 5px;
+}
