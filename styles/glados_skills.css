@@ -64,35 +64,35 @@
 }
 
 #csharpskill.large{
-    height: 1450px;
+    height: 1440px;
 }
 
 #csharpskill.large .showcase{
-    height: 1350px;
+    height: 1340px;
 }
 
 #jsskill.large{
-    height: 1450px;
+    height: 2200px;
 }
 
 #jsskill.large .showcase{
-    height: 1350px;
+    height: 2100px;
 }
 
 #phpskill.large{
-    height: 1450px;
+    height: 1850px;
 }
 
 #phpskill.large .showcase{
-    height: 1350px;
+    height: 1750px;
 }
 
 #javaskill.large{
-    height: 1450px;
+    height: 500px;
 }
 
 #javaskill.large .showcase{
-    height: 1350px;
+    height: 400px;
 }
 /* Showcase */
 .showcase{

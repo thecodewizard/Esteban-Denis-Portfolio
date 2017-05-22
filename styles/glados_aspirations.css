@@ -1,0 +1,77 @@
+ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+li{
+    color: #D7D7D7;
+    font-family: hero, sans-serif;
+    text-decoration: none;
+    list-style: none;
+
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px #f68739 solid;
+    border-radius: 5px;
+}
+
+#future > p{
+    text-align: center;
+}
+
+.line-art{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line-art > div{
+    height: 90%;
+    width: 0;
+    border: 1px #f68739 solid;
+    border-radius: 2px;
+    -webkit-animation: art-middle-grow 8s infinite;
+    -o-animation: art-middle-grow 8s infinite;
+    animation: art-middle-grow 8s infinite;
+}
+
+.line-art > div:nth-child(2), .line-art > div:nth-child(4){
+    height: 60%;
+    -webkit-animation: art-inner-grow 8s infinite;
+    -o-animation: art-inner-grow 8s infinite;
+    animation: art-inner-grow 8s infinite;
+}
+
+.line-art > div:nth-child(1), .line-art > div:nth-child(5){
+    height: 20%;
+    -webkit-animation: art-outer-grow 8s infinite;
+    -o-animation: art-outer-grow 8s infinite;
+    animation: art-outer-grow 8s infinite;
+}
+
+@keyframes art-outer-grow {
+    0% {height: 20%;}
+    50%{height: 60%;}
+    99%{height: 20%;}
+}
+
+@keyframes art-inner-grow {
+    0% {height: 60%;}
+    25%{height: 10%;}
+    66%{height: 90%;}
+    99%{height: 60%;}
+}
+
+@keyframes art-middle-grow {
+    0% {height: 90%;}
+    25%{height: 100%;}
+    66%{height: 30%;}
+    99%{height: 90%;}
+}

@@ -55,12 +55,14 @@
         // Check if the circle is currently open
         var open = circle.classList.contains('large');
 
-        // Close everything.
-        close_all_showcases();
+        // // Close everything.
+        // close_all_showcases();
 
         // If it was closed, open it
         if(!open){
             circle.classList.add('large');
+        } else {
+            circle.classList.remove('large');
         }
     }
 
