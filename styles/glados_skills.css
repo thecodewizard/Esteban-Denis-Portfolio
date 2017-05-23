@@ -63,37 +63,6 @@
     margin: 0;
 }
 
-#csharpskill.large{
-    height: 1440px;
-}
-
-#csharpskill.large .showcase{
-    height: 1340px;
-}
-
-#jsskill.large{
-    height: 2200px;
-}
-
-#jsskill.large .showcase{
-    height: 2100px;
-}
-
-#phpskill.large{
-    height: 1850px;
-}
-
-#phpskill.large .showcase{
-    height: 1750px;
-}
-
-#javaskill.large{
-    height: 500px;
-}
-
-#javaskill.large .showcase{
-    height: 400px;
-}
 /* Showcase */
 .showcase{
     -webkit-transition: all ease-in-out 1s;
@@ -118,6 +87,7 @@
 
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
 
     overflow-x: scroll;
     overflow-y: hidden;
@@ -297,4 +267,36 @@
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
+}
+
+
+.orb-holder{
+    height: 80%;
+    width: 100px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.orb{
+    height: 50px;
+    width: 50px;
+    opacity: 1;
+    z-index: 1000;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+
+    background: #f68739;
+    position: relative;
+}
+
+.orb .arrow{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    margin: 0;
+    border-color: #3c3f41;
 }

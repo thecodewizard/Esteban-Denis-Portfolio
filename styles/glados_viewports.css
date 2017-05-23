@@ -5,17 +5,108 @@
     display: none;
 }
 
+.onlymobile{
+    display: block;
+}
+
 /* Mobile Landscape VP */
 @media(max-width: 900px) and (orientation: landscape){
-    header{
-        flex-flow: row wrap;
+    .onlymobile{
+        display: none;
     }
 
-    header .line{
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
+    .notmobile{
+        display: inline-block;
+    }
+
+    header{
+        flex-flow: row nowrap;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: calc(100% - 50px);
+    }
+
+    #profile-pictures{
+        width: 40%;
+        height: 70%;
+        margin: 0 5%;
+    }
+
+    #profile-pictures img{
+        max-height: 100%;
+        max-width: none;
+        object-fit: contain;
+    }
+
+    header > section{
+        width: 40%;
+        height: 80%;
+        margin: 0 5%;
+    }
+
+    #logo{
+        width: 80%;
+    }
+
+    #logo img{
+        max-width: 100%;
+    }
+
+    #history .timeline > div{
+        width: 400px;
+    }
+
+    #history .timeline > div:nth-child(even){
+        opacity: 0;
+    }
+
+    #history .timeline + .timeline{
+        padding-top: 0;
+        height: 680px;
+    }
+
+    #history .timeline + .timeline > div{
+        display: block;
+        opacity: 1;
+        align-self: flex-start;
+    }
+
+    #history .timeline + .timeline > div:nth-child(odd){
+        opacity: 0;
+    }
+
+    #skills-coding article{
+        justify-content: flex-start;
+    }
+
+    #skills-coding article:nth-child(even) aside+div{
+        width: 250px;
+        margin: 0 7px;
+    }
+
+    #skills-coding article:nth-child(even) aside+div p{
+        text-align: right;
+        padding: 0 15px;
+    }
+
+    #skills .showcase > article > div{
+        max-height: calc(100vh - 100px) !important;
+    }
+
+    #skills .showcase > article > div > div:nth-child(1){
+        justify-content: center;
+    }
+
+    #internship .slideshow-item img{
+        max-height: 60vh;
+        max-width: 100%;
+    }
+
+    #internship .arrow{
+        margin: 0 6px;
+    }
+
+    header.offpage{
+        height: 50px;
     }
 }

@@ -12,6 +12,10 @@
     var circles = document.getElementsByClassName('circle');
     var legal = document.getElementById('legal');
     var pointer = document.getElementById('pointer');
+    var csharp = document.getElementById('csharpskill');
+    var js = document.getElementById('jsskill');
+    var php = document.getElementById('phpskill');
+    var java = document.getElementById('javaskill');
 
     // Global Variables
     var clickCount = 0;
@@ -67,22 +71,43 @@
         // Check if the circle is currently open
         var open = circle.classList.contains('large');
 
-        // // Close everything.
-        // close_all_showcases();
-
         // If it was closed, open it
         if(!open){
             circle.classList.add('large');
         } else {
             circle.classList.remove('large');
         }
+
+        // Set height
+        set_showcase_container_height(circle);
     }
 
-    function close_all_showcases(){
-        for(var i=0; i<circles.length; i++){
-            if(circles[i].parentElement.classList.contains('large'))
-                circles[i].parentElement.classList.remove('large');
+    function set_showcase_container_height(skill){
+        // Get the elements
+        var showcase = skill.getElementsByClassName('showcase')[0];
+
+        // Calculate the height
+        var height = 0;
+        if(showcase.parentNode.classList.contains('large')){
+            var showcases = showcase.getElementsByTagName('article');
+            for(var i=0;i<showcases.length;i++){
+                var curr_case = showcases[i];
+                height += curr_case.offsetHeight;
+            }
         }
+
+        // Set the height
+        showcase.style.height = height + "px";
+        showcase.parentNode.style.height = height + 100 + "px";
+    }
+
+    function recalculate_container_heights(){
+        setTimeout(function(){
+            set_showcase_container_height(csharp);
+            set_showcase_container_height(js);
+            set_showcase_container_height(php);
+            set_showcase_container_height(java);
+        }, 1000);
     }
 
     function manage_clickcount(){
@@ -114,6 +139,7 @@
         arrow_left.addEventListener("click", function(){goto_previous_slideshow_item();}, true);
         arrow_right.addEventListener("click", function (){goto_next_slideshow_item();}, true);
         legal.addEventListener("click", function(){open_changelog();}, true);
+        window.addEventListener("orientationchange", function(){recalculate_container_heights();}, false);
 
         //Multiple Listeners
         for(var i=0; i<circles.length; i++){

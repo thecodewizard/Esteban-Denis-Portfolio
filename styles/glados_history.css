@@ -31,6 +31,10 @@
     height: 630px;
 }
 
+.timeline + .timeline > div{
+    display: none;
+}
+
 .timeline > div{
     color: #dedede;
     width: 300px;

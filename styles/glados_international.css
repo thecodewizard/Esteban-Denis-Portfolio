@@ -28,14 +28,17 @@
 
 .slideshow-item{
     display: none;
+    flex-flow: column nowrap;
 }
 
 .slideshow-item.visible{
-    display: block;
+    display: flex;
 }
 
 .slideshow-item img{
     max-width: 100%;
+    object-fit: contain;
+    margin: auto;
 }
 
 .slideshow-item p{
