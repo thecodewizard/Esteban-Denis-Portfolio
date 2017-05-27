@@ -28,11 +28,13 @@
     align-self: flex-start;
     position: absolute;
     margin: 0 18px;
-    height: 630px;
+    height: 700px;
+    padding-top: 0;
 }
 
 .timeline + .timeline > div{
-    display: none;
+    opacity: 1;
+    align-self: flex-start;
 }
 
 .timeline > div{
@@ -46,6 +48,18 @@
 
 .timeline > div:last-child{
     margin-bottom: 50px;
+}
+
+.timeline > div:nth-child(even){
+    opacity: 0;
+}
+
+.timeline + .timeline > div:nth-child(even){
+    opacity: 1;
+}
+
+.timeline + .timeline > div:nth-child(odd){
+    opacity: 0;
 }
 
 .timeline > div:nth-child(odd){

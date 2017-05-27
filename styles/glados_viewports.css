@@ -1,22 +1,26 @@
 /* Viewport Classes */
 
 /* No VP */
-.notmobile{
+.notmobile, .notportrait{
     display: none;
 }
 
-.onlymobile{
+.onlyportrait{
     display: block;
 }
 
 /* Mobile Landscape VP */
-@media(max-width: 900px) and (orientation: landscape){
-    .onlymobile{
+@media (orientation: landscape){
+    .onlyportrait, .notmobile{
         display: none;
     }
 
-    .notmobile{
+    .notportrait{
         display: inline-block;
+    }
+
+    .forcelandscape{
+        display: inline-block !important;
     }
 
     header{
@@ -27,15 +31,12 @@
     }
 
     #profile-pictures{
-        width: 40%;
-        height: 70%;
-        margin: 0 5%;
-    }
+        max-width: 40%;
+        max-height: 70%;
+        min-height: 70%;
+        min-width: 40%;
 
-    #profile-pictures img{
-        max-height: 100%;
-        max-width: none;
-        object-fit: contain;
+        margin: 0 5%;
     }
 
     header > section{
@@ -50,29 +51,15 @@
 
     #logo img{
         max-width: 100%;
+        object-fit: contain;
     }
 
     #history .timeline > div{
         width: 400px;
     }
 
-    #history .timeline > div:nth-child(even){
-        opacity: 0;
-    }
-
     #history .timeline + .timeline{
-        padding-top: 0;
         height: 680px;
-    }
-
-    #history .timeline + .timeline > div{
-        display: block;
-        opacity: 1;
-        align-self: flex-start;
-    }
-
-    #history .timeline + .timeline > div:nth-child(odd){
-        opacity: 0;
     }
 
     #skills-coding article{
@@ -106,7 +93,184 @@
         margin: 0 6px;
     }
 
-    header.offpage{
+    .offpage header{
         height: 50px;
     }
+}
+
+/* GENERAL TABLET VP */
+@media (min-width: 768px){
+    .notmobile{
+        display: inline-block;
+    }
+
+    #profile-pictures img{
+        top: 10%;
+        left: -100px;
+
+        max-width: 80%;
+        max-height: 80%;
+        min-height: 80%;
+        min-width: 80%;
+
+        -webkit-transition: all ease-in-out 2s;
+        -moz-transition: all ease-in-out 2s;
+        -ms-transition: all ease-in-out 2s;
+        -o-transition: all ease-in-out 2s;
+        transition: all ease-in-out 2s;
+    }
+
+    #profile-pictures .focus{
+        min-width: 100%;
+        min-height: 100%;
+        top: 0;
+        left: 0;
+        margin: auto;
+        z-index: 100;
+        opacity: 1;
+    }
+
+    #profile-pictures .focus ~ img{
+        opacity: 0;
+        z-index: 0;
+    }
+
+    #profile-pictures .focus + img{
+        max-width: 80%;
+        min-height: 80%;
+        top: 10%;
+        right: -100px;
+        left: inherit;
+        z-index: 10;
+        opacity: 1;
+    }
+
+    header > section ~ section{
+        font-size: 1.5em;
+    }
+
+    #logo{
+        max-width: 60vw;
+        min-width: 40vw;
+    }
+
+    #logo img{
+        max-width: 100%;
+        min-width: 100%;
+        object-fit: contain;
+    }
+
+    #aboutme article, #internship article + p{
+        padding: 0 50px;
+        margin-bottom: 30px;
+    }
+
+    #history > div{
+        align-items: center;
+    }
+
+    #history .timeline{
+        margin: 0 30px 0 0;
+        padding-top: 0;
+    }
+
+    #history .timeline + .timeline{
+        display: none;
+    }
+
+    #history .timeline > div{
+        opacity: 1;
+    }
+
+    #history .timeline > div:nth-child(even){
+        align-self: flex-start;
+    }
+
+    #skills-soft p, #skills-networking p, #future p{
+        padding: 0 75px;
+    }
+
+    #future{
+        margin-bottom: 50px;
+    }
+
+    .line-art{
+        -webkit-transform: scale(1.2, 1.2);
+        -moz-transform: scale(1.2, 1.2);
+        -ms-transform: scale(1.2, 1.2);
+        -o-transform: scale(1.2, 1.2);
+        transform: scale(1.2, 1.2);
+        
+        margin: 60px auto;
+    }
+
+    #legal{
+        font-size: 0.9em;
+    }
+
+    #contact article a{
+        height: 60px;
+        width: 60px;
+    }
+}
+
+/* TABLET PORTRAIT VP */
+@media (min-width: 768px) and (orientation: portrait) {
+    .notportrait{
+        display: none;
+    }
+
+    .onlyportrait{
+        display: inline-block;
+    }
+
+
+    #internship .slideshow-item img{
+        max-height: 60vh;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #internship .arrow{
+        margin: 50% 6px;
+    }
+
+    .offpage header{
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.1em;
+    }
+
+    .offpage .line{
+        border: 2px #f68739 solid;
+    }
+
+    .offpage p{
+        padding: 0 50px;
+    }
+
+    .offpage .trailer{
+        padding: 0 100px;
+        font-size: 1.2em;
+        line-height: 1.3em;
+        height: 50vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+}
+
+/* TABLET LANDSCAPE VP */
+@media (min-width: 768px) and (orientation: landscape){
+    
+}
+
+/* DESKTOP VP */
+@media (min-width: 992px) {
+
+}
+
+/* TELEVISION VP */
+@media (min-width: 1200px){
+
 }

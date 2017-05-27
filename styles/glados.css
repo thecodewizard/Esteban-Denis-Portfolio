@@ -76,8 +76,8 @@ h1 > span{
 }
 
 #logo{
-    width: 50vw;
-    margin: auto;
+    max-width: 60vw;
+    margin: 0 auto;
 }
 
 /* Header */
@@ -91,19 +91,31 @@ header{
     align-items: center;
 }
 
-#profile-pictures{
-    margin-top: -50px;
-    width: 50vw;
-    height: 50vw;
-    overflow: hidden;
-
+header > section ~ section{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
 }
 
+#profile-pictures{
+    margin-top: -50px;
+    width: 50vw;
+    height: 50vw;
+    position: relative;
+}
+
 #profile-pictures img{
+    position: absolute;
+    top: 0;
+    left: 0;
+
     max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+
+    object-fit: cover;
+    z-index: 10;
 }
 
 /* Footer */

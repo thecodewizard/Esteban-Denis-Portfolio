@@ -20,6 +20,8 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+
+    overflow-x: hidden;
 }
 
 .slideshow .slideshow-item{

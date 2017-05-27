@@ -5,6 +5,7 @@
     var cv_location = "./media/download/CV.esteban.denis.pdf";
 
     //Elements
+    var body = document.getElementsByTagName('body')[0];
     var btn_cv = document.getElementById("download_cv");
     var slideshow_items = document.getElementsByClassName('slideshow-item');
     var arrow_left = document.getElementsByClassName('slideshow')[0].getElementsByClassName('arrow-left')[0];
@@ -16,6 +17,7 @@
     var js = document.getElementById('jsskill');
     var php = document.getElementById('phpskill');
     var java = document.getElementById('javaskill');
+    var profile_pictures = document.getElementById('profile-pictures');
 
     // Global Variables
     var clickCount = 0;
@@ -133,6 +135,39 @@
         }
     }
 
+    function profile_picture_slideshow(){
+        var imgs = profile_pictures.getElementsByTagName('img');
+        setTimeout(function(){
+            move_to_next_img(imgs, 0)
+        }, 6000);
+    }
+
+    function move_to_next_img(images, activeIndex){
+        // Set the variables
+        var curr_img = images[activeIndex];
+        var nxt_img, nxt_ai;
+
+        // Find the indexes
+        if(activeIndex === (images.length - 2)){
+            //The last image is active, set the first active
+            nxt_img = images[1];
+            nxt_ai = 1;
+        } else {
+            //Else set the next image active
+            nxt_img = images[activeIndex + 1];
+            nxt_ai = activeIndex + 1;
+        }
+
+        // Do the change
+        if(curr_img.classList.contains('focus')) curr_img.classList.remove('focus');
+        if(!nxt_img.classList.contains('focus')) nxt_img.classList.add('focus');
+
+        // Set the timeout
+        setTimeout(function(){
+            move_to_next_img(images, nxt_ai);
+        }, 6000);
+    }
+
     function startupScript(){
         //Event Listeners
         btn_cv.addEventListener("click", function(){download_cv();}, false);
@@ -153,6 +188,10 @@
             } else {
                 pointer.style.display = "inline-block";
             }
+        }
+
+        if(body.offsetWidth > 600){
+            profile_picture_slideshow();
         }
     }
 
