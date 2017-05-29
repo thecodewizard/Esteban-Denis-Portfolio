@@ -25,8 +25,26 @@
     var future = document.getElementById('future');
     var defh = document.getElementsByClassName('definition-holder')[0];
     var arc = document.getElementsByClassName('arrowholder')[0];
-    var showcases = document.getElementById('showcase').getElementsByTagName('article');
+    var sc = document.getElementById('showcase');
+    var showcases = sc.getElementsByTagName('article');
     var internship = document.getElementById('internship');
+    var plane = document.getElementById('plane');
+
+    //Browser Dectection Fields
+        // Opera 8.0+
+            var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+        // Firefox 1.0+
+            var isFirefox = typeof InstallTrigger !== 'undefined';
+        // Safari 3.0+ "[object HTMLElementConstructor]"
+            var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+        // Internet Explorer 6-11
+            var isIE = /*@cc_on!@*/false || !!document.documentMode;
+        // Edge 20+
+            var isEdge = !isIE && !!window.StyleMedia;
+        // Chrome 1+
+            var isChrome = !!window.chrome && !!window.chrome.webstore;
+        // Blink engine detection
+            var isBlink = (isChrome || isOpera) && !!window.CSS;
 
     //Easter Egg Slogans
     var slogans = ["Hakuna Matata",
@@ -241,7 +259,7 @@
             if((height > (startheight - 50)) && (height < endheight)){
                 var diff = height - startheight;
                 document.getElementsByClassName('subtitle')[0].style.top = diff + "px";
-                document.getElementById('plane').style.top = diff + "px";
+                plane.style.top = diff + "px";
             }
         }
 
@@ -279,7 +297,34 @@
             defh.removeEventListener("scroll", remove_future_arrow, true);
         }
 
-        //General Functions
+        function enableBrowsersupport(){
+            if(isFirefox || isEdge || isIE){
+                var transitions = document.getElementsByClassName("transition");
+                for(var t=0;t<transitions.length;t++){
+                    if(!transitions[t].classList.contains('browsersupport'))
+                        transitions[t].classList.add('browsersupport');
+                }
+            }
+
+            if(isEdge || isIE){
+                if(!plane.classList.contains('browsersupport'))
+                    plane.classList.add('browsersupport');
+
+                var slideshowitems = document.getElementsByClassName("slideshow-item");
+                for(var s=0;s<slideshowitems.length;s++){
+                    if(slideshowitems[s].hasAttribute('data-size') && !slideshowitems[s].classList.contains('browsersupport')){
+                        slideshowitems[s].classList.add('browsersupport');
+                    }
+                }
+            }
+
+            if(body.offsetWidth > 1200 && isIE){
+                if(!sc.classList.contains('browsersupport'))
+                    sc.classList.add('browsersupport');
+            }
+        }
+
+        // General Functions
         function startupScript(){
             //Event Listeners
             btn_cv.addEventListener("click", function(){download_cv();}, false);
@@ -324,10 +369,14 @@
                     }
                 }
             }
+
+            // Execute functions for all viewports
+            enableBrowsersupport();
         }
 
         function scrollingScripts(){
-            var yscroll = body.scrollTop;
+            // var yscroll = body.scrollTop;
+            var yscroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
             set_header_while_scrolling(yscroll);
             set_future_max(yscroll);
 
