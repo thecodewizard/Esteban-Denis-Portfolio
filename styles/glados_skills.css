@@ -52,6 +52,10 @@
     flex-direction: row-reverse;
 }
 
+#skills-coding article + aside{
+    cursor: pointer;
+}
+
 #skills-coding article > aside+div{
     width: calc(100% - 100px);
     margin-right: -25px;

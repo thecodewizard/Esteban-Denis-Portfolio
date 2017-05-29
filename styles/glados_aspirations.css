@@ -1,5 +1,34 @@
-#future > p{
+#future h2+p{
     text-align: center;
+}
+
+.definition-holder{
+    height: 200px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.arrow{
+    margin: 0 auto;
+    border-width: 0 2px 2px 0;
+}
+
+.arrowholder{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 5px 0;
+    opacity: 1;
+
+    -webkit-transition: all ease-in-out 2s;
+    -moz-transition: all ease-in-out 2s;
+    -ms-transition: all ease-in-out 2s;
+    -o-transition: all ease-in-out 2s;
+    transition: all ease-in-out 2s;
+}
+
+#future.max .definition-holder{
+    overflow-y: scroll;
 }
 
 .line-art{

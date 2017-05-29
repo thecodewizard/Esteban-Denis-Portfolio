@@ -1,4 +1,16 @@
 /* Internship HTML */
+body.offpage-internship{
+    background: url(./../media/backgrounds/ship.jpg) center no-repeat fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+body.offpage-changelog{
+    background: url(./../media/backgrounds/data_server.jpg) center no-repeat fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
 header{
     height: 50px;
     background: #3c3f41;
@@ -11,6 +23,10 @@ header{
     position: fixed;
     top:0;
     left:0;
+}
+
+header:before{
+    display: none;
 }
 
 body{

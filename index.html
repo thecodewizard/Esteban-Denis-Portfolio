@@ -7,6 +7,7 @@
     <!-- Mobile Controllers -->
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#F68739" />
 
@@ -23,6 +24,9 @@
 
 </head>
 <body>
+<div id="viewportchecker" title="Phone Portrait = Blue; Phone Landscape = Green; Tablet Portrait = Red;
+    Tablet Landscape & Small Desktop = Yellow: Large Desktop = Purple;
+    TV & Bigger = Black; Print = White;"></div>
 <header>
     <section id="profile-pictures">
         <img class="notmobile" src="./media/profile_pictures/IMG_20170401_161053.jpg"/>
@@ -31,13 +35,13 @@
         <img class="notmobile" src="./media/profile_pictures/IMG_20170210_114617.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170210_140124.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170210_163909.jpg"/>
-        <img class="notmobile" src="./media/profile_pictures/IMG_20170211_154854.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170304_122203_1.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170305_181025.jpg"/>
-        <img class="notmobile" src="./media/profile_pictures/IMG_20170305_182019.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170311_130059.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170312_131922.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170313_132928.jpg"/>
+        <img class="notmobile" src="./media/profile_pictures/IMG_20170305_182019.jpg"/>
+        <img class="notmobile" src="./media/profile_pictures/IMG_20170211_154854.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170321_101438.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170325_141817.jpg"/>
         <img class="notmobile" src="./media/profile_pictures/IMG_20170401_161053.jpg"/>
@@ -54,7 +58,19 @@
             <img src="./media/logos/nmct2.png" onclick="window.open('http://nmct.be');"/>
         </div>
     </section>
+    <div class="onlycomputer">
+        <p class="slogan">Don't Be Afraid To Expand Your Horizons
+            <span>It's Not Difficult, It's Merely A Challenge</span>
+        </p>
+    </div>
 </header>
+<div class="onlybigcomputer" id="headerPlaceholder">
+    <div class="onlycomputer">
+        <p class="slogan">Don't Be Afraid To Expand Your Horizons
+            <span>It's Not Difficult, It's Merely A Challenge</span>
+        </p>
+    </div>
+</div>
 <div class="transition">
     <div></div>
     <div></div>
@@ -154,6 +170,7 @@
     <section id="skills">
         <h2>My Skills</h2>
         <div id="skills-soft">
+            <h3 class="onlybigcomputer">Soft Skills</h3>
             <article>
                 <aside>
                     <img src="./media/logos/medal_orange_1.png" />
@@ -172,6 +189,18 @@
                     <h3>Perseverance</h3>
                     <p>Whenever I tackle a project, I consider the value of the project as it
                         were my own. I’m always giving my full hundred percent.</p>
+                </div>
+            </article>
+            <article>
+                <aside>
+                    <img src="./media/logos/medal_orange_3.png" />
+                </aside>
+                <div>
+                    <h3>Enthusiasm</h3>
+                    <p>Always prepared to go into the big void. If there is any extra-ordinary opportunity, I'll take it.<br/>
+                    No matter when or where, I'm always known as the enthousiastic guy taking all the challenges along the way.
+                    <span class="onlybigcomputer"><br/>Got a big 'opportunity' that nobody will take? Think again and call me.</span>
+                    </p>
                 </div>
             </article>
         </div>
@@ -209,7 +238,7 @@
         <div class="line"></div>
         <div id="skills-coding">
             <h3>Software Skills</h3>
-            <div id="pointer">
+            <div id="pointer" class="onlymobile">
                 Psssst... Click on a circle.
                 <div></div>
             </div>
@@ -222,10 +251,10 @@
                 <div>
                     <p>
                         Backend Logic & API<br/>
-                        Multithreading <br/>
-                        Apache Ignite on .NET <br/>
+                        Multithreading<br/>
+                        Apache Ignite on .NET<br/>
                         MVVM<br/>
-                        Listeners & Callbacks <br/>
+                        Listeners & Callbacks<br/>
                         <!--...-->
                     </p>
                 </div>
@@ -426,7 +455,9 @@
                             <div>
                                 <img src="./media/showcase/ow_mobile_history.png" />
                                 <img src="./media/showcase/ow_mobile_skills.png" />
-                                <img src="./media/showcase/ow_mobile_log.png" />
+                                <img src="./media/showcase/ow_tablet.png" />
+                                <img src="./media/showcase/ow_homepage.png" />
+                                <img src="./media/showcase/ow_inception.png" />
                             </div>
                             <div class="orb-holder">
                                 <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
@@ -439,7 +470,7 @@
                         <div style="height: 350px;">
                             <div>
                                 <h4>TrackIt</h4>
-                                <p>For my 2<sup>nd</sup> year of NMCT I had been tasked to make a site that used a couple of API's. I decided to use the API's of google maps, package distributors and NSlookup servers
+                                <p>For my 2<sup>nd</sup> year of NMCT I had been tasked to make a site that used a couple of API's. I decided to use the API's of google maps, package distributors and NS lookup servers
                                 to create a site that simulated how your TCP/IP packet would go to the server by other means than internet. <br/>
                                 If you ever wondered how slow your computer would be if TCP/IP went by postal pidgeons? Find out here.<br/>
                                 Note: Some API's are offline so this website might not respond as originally intended.</p>
@@ -639,7 +670,7 @@
                                 <h4>Catch 'em All</h4>
                                 <p>My very first and only android application. In the time, Pokémon Go was just announced (and not there yet) so I decided to be quicker.<br/>
                                 I made an app that would use Google Maps API to get your map and location, and would use the PokéAPI to get images from pokémon. These images were downloaded from
-                                a remote server, but the app is equipped with caching logic. I would asynchronously generate, spawn and countdown pokémons for you to catch. Download your API here.
+                                a remote server, but the app is equipped with caching logic. I would asynchronously generate, spawn and countdown pokémons for you to catch. Download your APK here.
                                 (Coded for and Tested on Android Marshmellow)</p>
                                 <div>
                                     <a class="download" href="./media/download/CatchEmAll.zip" target="_blank"></a>
@@ -663,6 +694,307 @@
                 </div>
             </article>
         </div>
+        <div class="line notmobile"></div>
+        <div id="showcase" class="notmobile">
+            <h3>Showcase</h3>
+            <div class="showcase">
+                <article>
+                    <div style="height: 300px;">
+                        <div>
+                            <h4>MyThings Dashboard</h4>
+                            <p>A project born by a partnership between Proximus and Howest. This is a dashboard prototype to manage IoT devices over the internet.<br/>
+                                In this project, I handled the backend features to provide smart predictions, connect to the proximus API and provide custom machine learning.</p>
+                            <div>
+                                <a class="github" href="https://github.com/thecodewizard/MyThings" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/mythings_dashboard.jpg" />
+                            <img src="./media/showcase/mythings_sensor.jpg" />
+                            <img src="./media/showcase/mythings_details.jpg" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 325px;">
+                        <div>
+                            <h4>House of the Future</h4>
+                            <p>This Domotica Driven Platform was written in function of our 'Datacommunications' Course in the 2<sup>nd</sup> year of NMCT.<br/>
+                                With this software, we could communicate with a PCB all over the world and turn off our lights and manage our heating.<br/>
+                                Special is its design, as this was fully written with the modular MVVM design pattern, which really improved flexibility across devices</p>
+                            <div>
+                                <a class="github" href="https://github.com/thecodewizard/House-OF-The-Future" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/hotf_ppt.jpg" />
+                            <img src="./media/showcase/hotf_scheme.jpg" />
+                            <img src="./media/showcase/hotf_mainpage.jpg" />
+                            <img src="./media/showcase/hotf_secondpage.jpg" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 300px;">
+                        <div>
+                            <h4>ShoppingApp</h4>
+                            <p>In the very first year I learned to program, I was very exited with this new knowledge and I had it as a mission to improve everything with my newly gained skills<br/>
+                                In order to make the life easier for my parents, I made a shopping app. Do not judge, as this was one of my first programs ever made, but I think it has its charms.</p>
+                            <div>
+                                <a class="download" href="./media/download/ShoppingApp.zip" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/sa_homescreen.png" />
+                            <img src="./media/showcase/sa_newlist.png" />
+                            <img src="./media/showcase/sa_editlist.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 325px;">
+                        <div>
+                            <h4>Rescue The Princess</h4>
+                            <p>After 2 months in NMCT, I wanted to use my newly gained programming skills to make games and other stuff I considered cool at that time and age.<br/>
+                                This was made for NMCT during their visitation days, and it's a little game. The code itself is terrible, after only 2 months you cannot code that well,
+                                but it still has some fun aspects as a game.</p>
+                            <div>
+                                <a class="github" href="https://github.com/thecodewizard/Rescue-The-Princess" target="_blank"></a>
+                                <a class="download" href="./media/download/RescueThePrinces.zip" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/rtp_maingame.png" />
+                            <img src="./media/showcase/rtp_round1.png" />
+                            <img src="./media/showcase/rtp_round2.png" />
+                            <img src="./media/showcase/rtp_round3.png" />
+                            <img src="./media/showcase/rtp_wongame.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 325px;">
+                        <div>
+                            <h4>DungeonDex</h4>
+                            <p>DungeonDex is a project made for Web Advanced in the 2<sup>nd</sup> year of NMCT. This is made with my love for Dungeons and Dragons.<br/>
+                                Click the Chrome icon to visit this masterpiece, both on desktop as mobile. Although this is now just the empty front end as the database is not currently running
+                                on the webspace where this is hosted. This issue will be tackled in the future to get this back to its former glory.</p>
+                            <div>
+                                <a class="github" href="https://github.com/thecodewizard/DungeonDex" target="_blank"></a>
+                                <a class="chrome" href="./projects/DungeonDex/index.html" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/dungeondex_homescreen1.png" />
+                            <img src="./media/showcase/dungeondex_homescreen2.png" />
+                            <img src="./media/showcase/dungeondex_mobile.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 275px;">
+                        <div>
+                            <h4>Explorers of the Galaxy</h4>
+                            <p>The first website I ever made. Not as good as I would make today, but I'm still proud of this. After one year of css and html training (and introductory javascript)
+                                I made this site about space. Enjoy information on outer space here! Even completely responsive without ANY libraries! All own work.</p>
+                            <div>
+                                <a class="github" href="https://github.com/thecodewizard/Explorers-of-the-Galaxy" target="_blank"></a>
+                                <a class="chrome" href="./projects/Explorers%20Of%20The%20Galaxy/index.html" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/eotg_homepage.png" />
+                            <img src="./media/showcase/eotg_articles.png" />
+                            <img src="./media/showcase/eotg_galaxy.png" />
+                            <img src="./media/showcase/eotg_mobile.png" />
+                            <img src="./media/showcase/eotg_mobile_launches.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article data-noclick="true">
+                    <div style="height: 235px;">
+                        <div style="border: none;">
+                            <h4>InAnyEvent - NetworkMap Monitor</h4>
+                            <p>I made this NetworkMonitor whilst working for <a style="display:inline; color: white; padding: 0; margin:0; text-decoration: none;" href="http://inanyevent.eu">InAnyEvent</a> as summer job. This website keeps track of network equipment on remote networks
+                                and notifies you when something goes offline. <br/>
+                                This is based on master-slave principle. Remote slave scripts are gathering pings and reporting to a master node in the cloud.</p>
+                            <div class="onlycomputer">
+
+                            </div>
+                            <span class="onlycomputer"></span>
+                            <span class="onlycomputer"></span>
+                            <!--<span>Scroll to see images >>></span>-->
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 300px;">
+                        <div>
+                            <h4>This Website</h4>
+                            <p>My most recent creation, this website shows my skills and servers as my general portfolio site. I included life events such as my internship details.<br/>
+                                This is made on the mobile-first strategy, to ensure maximum responsiveness. Only used html, css and javascript without any external libraries or code. All by myself.</p>
+                            <div>
+                                <a class="github" href="https://github.com/thecodewizard/Esteban-Denis-Portfolio" target="_blank"></a>
+                                <a class="chrome" href="./index.html" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/ow_mobile_history.png" />
+                            <img src="./media/showcase/ow_mobile_skills.png" />
+                            <img src="./media/showcase/ow_tablet.png" />
+                            <img src="./media/showcase/ow_homepage.png" />
+                            <img src="./media/showcase/ow_inception.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 375px;">
+                        <div>
+                            <h4>TrackIt</h4>
+                            <p>For my 2<sup>nd</sup> year of NMCT I had been tasked to make a site that used a couple of API's. I decided to use the API's of google maps, package distributors and NS lookup servers
+                                to create a site that simulated how your TCP/IP packet would go to the server by other means than internet. <br/>
+                                If you ever wondered how slow your computer would be if TCP/IP went by postal pidgeons? Find out here.<br/>
+                                Note: Some API's are offline so this website might not respond as originally intended.</p>
+                            <div>
+                                <a class="github" href="https://github.com/thecodewizard/TrackIt" target="_blank"></a>
+                                <a class="chrome" href="./projects/TrackIt/index.html" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/ti_homepage.png" />
+                            <img src="./media/showcase/ti_mobile_white.png" />
+                            <img src="./media/showcase/ti_mobile.png" />
+                            <img src="./media/showcase/ti_menu.png" />
+                            <img src="./media/showcase/ti_trackingpage.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div style="height: 350px;">
+                        <div>
+                            <h4>WheatleyHomeSite</h4>
+                            <p>As network guru, it wasn't long before I took a worn out laptop and converted this into a linux server of my own. Now that I owned my very own server,
+                                I still needed a website for it. Wheatley Homesite a site for the only purpose to pose as a front for my server. On this site I can access any music or movies it hosts.<br/>
+                                This is one of the first backend accomplishments of myself. Passwords and such are secured with encryption and salts on backend level.</p>
+                            <div>
+                                <a class="chrome" href="./projects/WheatleyHomeSite%202.0/index.html" target="_blank"></a>
+                                <a class="download" href="./media/download/WheatleyHomeSite%202.0.zip" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/whs_homepage.png" />
+                            <img src="./media/showcase/whs_contact.png" />
+                            <img src="./media/showcase/whs_mobile.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article data-noclick="true">
+                    <div style="height: 225px;">
+                        <div style="border:none;">
+                            <h4>Dungeons &amp; Dragons</h4>
+                            <p>My love for Dungeons &amp; Dragons has lead to this website. Together with Nick D'Hondt I created this site for a playthrough in my own campaign.<br/>
+                                This site should keep track of all the expenses and treasures of a hero. This was my first real backend experience after Wheatley Homesite.</p>
+                            <div>
+                                <a class="github" href="https://github.com/nickdhondt/dungeons-and-dragons" target="_blank"></a>
+                            </div>
+                            <span class="onlycomputer"></span>
+                            <span class="onlycomputer"></span>
+                        </div>
+                    </div>
+                </article>
+                <article id="catchem">
+                    <div style="height: 385px;">
+                        <div>
+                            <h4>Catch 'em All</h4>
+                            <p>My very first and only android application. In the time, Pokémon Go was just announced (and not there yet) so I decided to be quicker.<br/>
+                                I made an app that would use Google Maps API to get your map and location, and would use the PokéAPI to get images from pokémon. These images were downloaded from
+                                a remote server, but the app is equipped with caching logic. I would asynchronously generate, spawn and countdown pokémons for you to catch. Download your APK here.
+                                (Coded for and Tested on Android Marshmellow)</p>
+                            <div>
+                                <a class="download" href="./media/download/CatchEmAll.zip" target="_blank"></a>
+                            </div>
+                            <span>Scroll to see images >>></span>
+                            <span class="onlycomputer">Click to see images >>></span>
+                        </div>
+                        <div>
+                            <img src="./media/showcase/cea_loading.png" />
+                            <img src="./media/showcase/cma_map.png" />
+                            <img src="./media/showcase/cma_pokedex.png" />
+                            <img src="./media/showcase/cma_settings.png" />
+                            <img src="./media/showcase/cma_pikachu.png" />
+                        </div>
+                        <div class="orb-holder">
+                            <div class="orb" onclick="this.parentNode.parentNode.scrollLeft = 0;">
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
     <div class="transition right">
         <div></div>
@@ -672,7 +1004,7 @@
         <h2>International Relations</h2>
         <article>
             <div id="plane">
-                <img src="./media/logos/Plane%20AI.png" />
+                <img src="./media/logos/Plane%20AI%20HD.png" />
             </div>
             <div class="subtitle">
                 <p>Spring Semester 2016-2017<br/>Internship in Chandigarh University</p>
@@ -681,7 +1013,7 @@
                 <div class="arrow arrow-left"></div>
                 <div class="slideshow-item visible">
                     <img src="./media/internship/IMG_20170310_153514.jpg" />
-                    <p>As a teacher I got many chances to organise workshops and help their students to learn new things, new technologies. <br/>
+                    <p>As a teacher I got many chances to organise workshops and help the Chandigarh University students to learn new things, new technologies. <br/>
                         The University was very grateful for my initiatives and even handed out certificates on the end of each workshop!</p>
                 </div>
                 <div class="slideshow-item">
@@ -695,7 +1027,7 @@
                 </div>
                 <div class="slideshow-item">
                     <img src="./media/internship/20170228_154701.jpg" />
-                    <p>Next to workshops I was also in charge of some Network & Infrastructure Courses. My class of 2nd Year Masters in Computer Applications sure were happy to get
+                    <p>Next to workshops I was also in charge of some Network & Infrastructure Courses. My class of 2nd Year Masters in Computer Applications sure was happy to get
                     to know how to manage and work in Linux + setup the basic services!</p>
                 </div>
                 <div class="slideshow-item">
@@ -710,13 +1042,18 @@
                 </div>
                 <div class="slideshow-item">
                     <img src="./media/internship/IMG_20170225_181134.jpg" />
-                    <p>A faraway trip but also faraway friends. I mada a lot of intercultural connections and learned a lot of the ways of other people,
+                    <p>A far away trip but also far away friends. I mada a lot of intercultural connections and learned a lot of the ways of other people,
                     with another background, another way of looking at life. Each of these friends enriched me into becoming the human I am today.</p>
                 </div>
                 <div class="slideshow-item">
                     <img src="./media/internship/IMG_20170302_160349.jpg" />
                     <p>No matter how far I'll go, people will always know me as that enthusiastic computer geek who came and stole the show. <br/>
                         I enjoyed my life to the fullest. Do you?</p>
+                </div>
+                <div class="slideshow-item">
+                    <img src="./media/internship/DSC_0423.JPG" />
+                    <p>Travelling is my passion and together with my friends I'm able to do and see a lot of this world. Discovering new places, learning new things...<br/>
+                    I want to see what this planet has to offer. And India is an awesome start, especially with awesome friends, priority #1</p>
                 </div>
                 <div class="slideshow-item">
                     <img src="./media/internship/IMG_20170415_185129.jpg" />
@@ -753,40 +1090,45 @@
     <section id="future">
         <h2>Aspirations</h2>
         <p>What are my aspirations for the future? What would be my ideal job? Fact is, I'm a super flexible guy with many interests, so it's hard to define a specific job that would describe my needs.
-        <br/>But this would be a very boring section if I only glossed over how multi-employable I am. Let's sum up some core concepts that I really require in a possible job:</p>
+            <br/>But this would be a very boring section if I only glossed over how multi-employable I am. Let's sum up some core concepts that I really require in a possible job:</p>
         <ul>
             <li>Challenging</li>
             <li>Diversifying</li>
             <li>Sociable</li>
             <li>Upgradable</li>
         </ul>
-        <div class="line-art">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="definition-holder">
+            <div class="line-art">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <article>
+                <h3>Challenging</h3>
+                <p>I need the challenge. An easy stay-at-home 9 to 5 is not on my wishlist. I'm a fighter and want to grow and be challenged by my job.
+                    Don't worry, if you give me a task that I don't know how to do yet, it won't be for long. Lifelong learning is a virtue.</p>
+            </article>
+            <article>
+                <h3>Diversifying</h3>
+                <p>My biggest fear is to grow old behind the same desk. This does not imply that I'm in for some job hopping but the job that I have
+                    should offer me adventure, should be diversifying. I've got a lot of flexibility and enthusiasm to give, but I need something to give it to.</p>
+            </article>
+            <article>
+                <h3>Sociable</h3>
+                <p>According to people around me, I've always been the talker. I enjoy giving presentations and speaking to/in front of people gives me the thrill that I so crave.<br/>
+                    The perfect job for me combines my IT Knowledge and my predestined love for presenting.</p>
+            </article>
+            <article>
+                <h3>Upgradable</h3>
+                <p>My enthusiasm, professionalism and knowledge are bundled into a strong and powerful working force. However, that force needs a goal. I need something to strive for, must mark the red X on the map.
+                    <br/>Having a goal in live eases me and as long as my future job provides me with something to work up to, I can channel that beam of productivity.</p>
+            </article>
         </div>
-        <article>
-            <h3>Challenging</h3>
-            <p>I need the challenge. An easy stay-at-home 9 to 5 is not on my wishlist. I'm a fighter and want to grow and be challenged by my job.
-            Don't worry, if you give me a task that I don't know how to do yet, it won't be for long. Lifelong learning is a virtue.</p>
-        </article>
-        <article>
-            <h3>Diversifying</h3>
-            <p>My biggest fear is to grow old behind the same desk. This does not imply that I'm in for some job hopping but the job that I have
-            should offer me adventure, should be diversifying. I've got a lot of flexibility and enthusiasm to give, but I need something to give it to.</p>
-        </article>
-        <article>
-            <h3>Sociable</h3>
-            <p>According to people around me, I've always been the talker. I enjoy giving presentations and speaking to/in front of people gives me the thrill that I so crave.<br/>
-            The perfect job for me combines my IT Knowledge and my predestined love for presenting.</p>
-        </article>
-        <article>
-            <h3>Upgradable</h3>
-            <p>My enthusiasm, professionalism and knowledge are bundled into a strong and powerful working force. However, that force needs a goal. I need something to strive for, must mark the red X on the map.
-            <br/>Having a goal in live eases me and as long as my future job provides me with something to work up to, I can channel that beam of productivity.</p>
-        </article>
+        <div class="arrowholder">
+            <div class="arrow arrow-down"></div>
+        </div>
     </section>
 </main>
 <footer>
@@ -811,7 +1153,7 @@
         </div>
     </div>
     <div id="legal">
-        <p>Made By Esteban Denis - <span>Version 0.2.2<span class="notmobile forcelandscape class=notmobile"> - Click to see changelog</span></span> - 28/05/2017</p>
+        <p>Made By Esteban Denis - <span>Version 0.3.1 <span class="notmobile forcelandscape class=notmobile"> - Click to see changelog</span></span> - 29/05/2017</p>
     </div>
 </footer>
 </body>

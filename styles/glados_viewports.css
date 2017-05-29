@@ -1,22 +1,34 @@
-/* Viewport Classes */
+/* Viewports: 
+    Phone Portrait = Blue; Phone Landscape = Green; Tablet Portrait = Red;
+    Tablet Landscape & Small Desktop = Yellow: Large Desktop = Purple;
+    TV & Bigger = Black; Print = White;
+ */
 
 /* No VP */
-.notmobile, .notportrait{
+#viewportchecker{
+    background: blue;
+}
+
+.notmobile, .notportrait, .onlycomputer, .onlybigcomputer{
     display: none;
 }
 
-.onlyportrait{
+.onlyportrait, .onlymobile{
     display: block;
 }
 
 /* Mobile Landscape VP */
 @media (orientation: landscape){
+    #viewportchecker{
+        background: green;
+    }
+
     .onlyportrait, .notmobile{
         display: none;
     }
 
-    .notportrait{
-        display: inline-block;
+    .notportrait, .onlymobile{
+        display: block;
     }
 
     .forcelandscape{
@@ -28,6 +40,10 @@
         flex-grow: 0;
         flex-shrink: 0;
         height: calc(100% - 50px);
+    }
+
+    header:before{
+        height: calc(100vh + 50px);
     }
 
     #profile-pictures{
@@ -93,6 +109,19 @@
         margin: 0 6px;
     }
 
+    #future .arrowholder{
+        display: none;
+    }
+
+    #future h2+p{
+        padding: 0 25px;
+    }
+
+
+    .definition-holder{
+        height: auto;
+    }
+
     .offpage header{
         height: 50px;
     }
@@ -100,7 +129,15 @@
 
 /* GENERAL TABLET VP */
 @media (min-width: 768px){
+    #viewportchecker{
+        background: deeppink;
+    }
+
     .notmobile{
+        display: block;
+    }
+
+    footer .notmobile{
         display: inline-block;
     }
 
@@ -186,12 +223,63 @@
         align-self: flex-start;
     }
 
+    #skills{
+        margin: -200px 0 -100px;
+        padding: 200px 0 125px;
+    }
+
     #skills-soft p, #skills-networking p, #future p{
         padding: 0 75px;
     }
 
+    #skills-coding{
+        min-height: 260px;
+    }
+
+
+    #skills-coding > article{
+        width: calc(50% - 50px);
+        float: left;
+    }
+
+    #skills-coding .showcase{
+        display: none;
+    }
+
+    #showcase > div{
+        height: auto;
+    }
+
+
+    #skills-coding article + aside{
+        cursor: default;
+    }
+
+    #skills-coding > article{
+        width: calc(50% - 50px);
+        float: left;
+    }
+
+    #skills-coding .showcase{
+        display: none;
+    }
+
+    #internship .slideshow{
+        height: 500px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    #internship .arrow{
+        margin: 50% 6px;
+    }
+
     #future{
         margin-bottom: 50px;
+    }
+
+    .definition-holder{
+        height: auto;
     }
 
     .line-art{
@@ -212,27 +300,50 @@
         height: 60px;
         width: 60px;
     }
+
+    #future.max .definition-holder{
+        overflow: hidden;
+    }
 }
 
 /* TABLET PORTRAIT VP */
 @media (min-width: 768px) and (orientation: portrait) {
-    .notportrait{
+    #viewportchecker{
+        background: red;
+    }
+
+    .notportrait, .onlymobile{
         display: none;
     }
 
     .onlyportrait{
-        display: inline-block;
+        display: block;
     }
 
+    #skills{
+        margin: -200px 0 -100px;
+        padding: 200px 0 125px;
+    }
+
+    #skills-coding{
+        min-height: 260px;
+    }
+
+    #showcase > div{
+        height: auto;
+    }
+
+    #showcase .showcase > article > div > div:nth-child(1){
+        width: 50vw;
+    }
 
     #internship .slideshow-item img{
-        max-height: 60vh;
-        max-width: 100%;
+        max-height: 400px;
         margin-bottom: 20px;
     }
 
-    #internship .arrow{
-        margin: 50% 6px;
+    #future .arrowholder{
+        display: none;
     }
 
     .offpage header{
@@ -260,17 +371,523 @@
     }
 }
 
-/* TABLET LANDSCAPE VP */
-@media (min-width: 768px) and (orientation: landscape){
-    
+/* TABLET & SMALL DESKTOP VP */
+@media (min-width: 992px) {
+    #viewportchecker{
+        background: yellow;
+    }
+
+    .onlycomputer{
+        display: block;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+
+    header{
+        height: 100vh;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    header .line{
+        display: none;
+    }
+
+    header:before{
+        background: url(./../media/backgrounds/night-satellite.jpg) center no-repeat fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    #profile-pictures{
+        height: 150px;
+        width: 150px;
+        margin: 0 330px 25px 0;
+
+        min-width: inherit; max-width: inherit;
+        min-height: inherit; max-height: inherit;
+    }
+
+    #profile-pictures img{
+        opacity: 0;
+        top: 0;
+        left: 0;
+    }
+
+    #profile-pictures .focus + img{
+        right: -60px;
+    }
+
+    header > section ~ section{
+        flex-flow: row nowrap;
+        font-size: 1.1em;
+        width: 600px;
+        height: 20%;
+    }
+
+    header > section ~ section *{
+        text-align: right;
+    }
+
+    #logo{
+        width: 35%;
+        min-width: inherit; max-width: 100%;
+        min-height: inherit; max-height: 100%;
+        object-fit: contain;
+    }
+
+    #logo img{
+        min-width: inherit; max-width: inherit;
+    }
+
+    #aboutme{
+        margin: 0 0 40px 10%;
+        width: 50%;
+        padding: 20px;
+        background: #3c3f41;
+    }
+
+    #history{
+        margin: 0 0 40px 30%;
+        width: 60%;
+    }
+
+    #aboutme article{
+        padding: 0;
+    }
+
+    #skills{
+        margin: -100px 0 -100px;
+        padding: 100px 0 125px;
+        background: linear-gradient(to bottom, transparent, #3c3f41 2%);
+    }
+
+    #skills article{
+        flex-flow: column nowrap;
+    }
+
+    #skills h2{
+        margin: 15px 0 30px;
+    }
+
+    #skills-coding{
+        margin: 25px 0 50px;
+    }
+
+    #skills-coding article{
+        flex-flow: row nowrap;
+        flex-direction: row-reverse;
+    }
+
+    #skills-coding article p{
+        text-align: right;
+        padding: 0 50px;
+    }
+
+    #skills-coding article:nth-child(even){
+        flex-direction: row;
+    }
+
+    #skills-coding article:nth-child(even) aside+div p{
+        text-align: left;
+    }
+
+    #skills-coding h3{
+        margin: 15px 0 20px;
+    }
+
+    #future h2 + p, #future ul{
+        padding: 0 100px;
+    }
+
+    .offpage p, .offpage ul{
+        padding: 0 100px;
+    }
+
+    #contact > div{
+        padding: 0 100px;
+    }
+
+    .offpage header{
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .offpage header p{
+        padding: 0;
+    }
+
+    .transition div{
+        width: 25%;
+    }
+
+    .transition div:nth-child(1){
+        width: 40%;
+    }
+
+    #phpskill .circle > div:nth-child(1), #phpskill .circle > div:nth-child(2){
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+    }
+
+    *::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #3c3f41;
+    }
+
+    *::-webkit-scrollbar
+    {
+        width: 12px;
+        background-color: #3c3f41;
+    }
+
+    *::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(246, 135, 57, 0.41);
+        background-color: #f68739;
+    }
 }
 
-/* DESKTOP VP */
-@media (min-width: 992px) {
+/* ONLY TABLET LANDSCAPE & SMALL DESKTOP VP */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #showcase{
+        padding: 0 20px;
+    }
 
+    #showcase .showcase > article{
+        overflow-x: scroll;
+    }
+
+    #showcase .showcase{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    #showcase article{
+        width: calc(33% - 50px);
+        overflow: auto !important;
+    }
+
+    #showcase article > div{
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+
+    #showcase article > div > div{
+        display: none;
+        border: none;
+    }
+
+    #showcase article > div > div span{
+        display: none;
+    }
+
+    #showcase article > div > div span + span{
+        display: block;
+        padding-bottom: 20px;
+    }
+
+    #showcase article > div > div:nth-child(1){
+        display: flex;
+        justify-content: space-between !important;
+        align-items: center;
+        width: 100%;
+
+        background: rgba(246, 135, 57, 0.3);
+        background-clip: content-box;
+    }
+
+    #showcase .active{
+        width: 100%;
+        min-width: 100%;
+        margin-left: 50px;
+        overflow: hidden !important;
+    }
+
+    #showcase .active > div{
+        overflow-x: scroll !important;
+        overflow-y: hidden;
+    }
+
+    #showcase .active > div> div:nth-child(1){
+        width: calc(35% - 50px);
+    }
+
+    #showcase .active > div > div{
+        display: block;
+        border-right: 1px #f68739 solid;
+        max-height: 400px;
+        overflow: hidden !important;
+    }
+
+    #showcase .active img{
+        max-height: 400px;
+    }
+
+    #showcase .active > div{
+        margin: 0 200px;
+    }
+
+    #showcase .active .orb-holder{
+        display: none;
+    }
+
+    #catchem.active > div > div{
+        min-width: 400px;
+    }
+}
+
+/* LARGE DESKTOP VP */
+@media (min-width: 1200px){
+    #viewportchecker{
+        background: purple;
+    }
+
+    .onlybigcomputer{
+        display: block;
+    }
+
+    span.onlybigcomputer{
+        display: inline;
+    }
+
+    h2{
+        font-size: 1.8em;
+    }
+
+    h3{
+        font-size: 1.3em;
+    }
+
+    #profile-pictures{
+        height: 200px;
+        width: 200px;
+        margin: 0 375px 50px 0;
+
+        min-width: inherit; max-width: inherit;
+        min-height: inherit; max-height: inherit;
+    }
+
+    #profile-pictures .focus + img{
+        right: -80px;
+    }
+
+    .slogan{
+        top: 275px;
+        left: 150px;
+    }
+
+    .slogan span{
+        font-size: 0.5em;
+    }
+
+    #headerPlaceholder{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    header .slogan{
+        display: none;
+    }
+
+    #aboutme{
+        margin: 0 0 40px 20%;
+        width: 25%;
+    }
+
+    #skills{
+        background: linear-gradient(to bottom, transparent, #3c3f41 2%, #3c3f41 99%, transparent);
+    }
+
+    #skills-soft, #skills-networking{
+        width: 50%;
+        float: left;
+    }
+
+    #skills-soft + .line{
+        display: none;
+    }
+
+    #skills-networking + .line{
+        margin: 750px auto 0;
+    }
+
+    #skills-coding{
+        margin: 100px 0 120px;
+    }
+
+    #showcase img{
+        max-height: 200px;
+    }
+
+    #showcase article > div{
+        flex-flow: column nowrap;
+        height: 100% !important;
+        overflow: auto;
+    }
+
+    #showcase article > div > div:first-child{
+        border: none;
+        height: calc(40% - 20px);
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    #showcase article > div > div > h4{
+        margin: 10px 0 25px;
+    }
+
+    #showcase article > div > div > span{
+        display: none;
+    }
+
+    #showcase article > div > div:nth-child(2){
+        height: 60%;
+        width: auto;
+        overflow-y: auto;
+        justify-content: center;
+    }
+
+    #showcase article > div > div:nth-child(3){
+        display: none;
+    }
+
+    #showcase article[data-noclick="true"]{
+        padding: 0;
+    }
+
+    #showcase article[data-noclick="true"] > div{
+        padding: 20px 0 0;
+    }
+
+    #showcase article[data-noclick="true"] > div > div{
+        margin: 0;
+    }
+
+    #internship{
+        background: #3c3f41;
+        margin: 100px 0 40px 20%;
+        width: 30%;
+        padding: 20px 0;
+    }
+
+    #internship > article{
+        position: relative;
+    }
+
+    #internship .slideshow-item img{
+        max-height: 400px;
+    }
+
+    #plane, #plane + .subtitle{
+        position: absolute;
+        top: -50px;
+        left: 125%;
+    }
+
+    #plane{
+        height: 300px;
+        width: 500px;
+    }
+
+    #plane img{
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    #plane + .subtitle{
+        left: 110%;
+    }
+
+    .subtitle p{
+        width: 600px;
+        font-size: 2em;
+        font-weight: bold;
+        font-family: hero-light, sans-serif;
+    }
+
+    #future{
+        margin-bottom: 100px;
+    }
+
+    #future p{
+        padding: 0 200px;
+    }
+
+    #future ul{
+        width: 50%;
+        margin: auto;
+    }
+
+    #contact > div{
+        padding: 0 200px;
+    }
+
+    .offpage header{
+        left: 0;
+    }
+
+    .offpage main{
+        padding: 100px 200px 50px;
+        width: calc(100vw - 400px);
+    }
+
+    .offpage main aside{
+        width: 100%;
+    }
+
+    .offpage-changelog main{
+        background: rgba(60, 63, 65, 0.6);
+    }
+    
+    .offpage-changelog *{
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+
+    @media (min-width: 1400px){
+        header{
+            left: -25px;
+        }
+    }
+
+    @media (min-width: 1500px) {
+        header{
+            left: -125px;
+        }
+    }
 }
 
 /* TELEVISION VP */
-@media (min-width: 1200px){
+@media (min-width: 2000px) {
+    #viewportchecker{
+        background: black;
+    }
+}
 
+/* PRINT VP */
+@media print {
+    #viewportchecker{
+        background: white;
+    }
 }

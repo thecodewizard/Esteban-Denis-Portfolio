@@ -7,14 +7,51 @@
 body{
     height: 100vh;
     width: 100vw;
-    background: url(./../media/backgrounds/5.jpg) right no-repeat fixed;
-    -webkit-background-size:cover;
-    background-size:cover;
+    background: url(./../media/backgrounds/satellite.jpg) center no-repeat fixed;
+    z-index: 100;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 p{
     color: white;
     font-family: sans-serif;
+}
+
+header{
+    position: relative;
+}
+
+header:before{
+    position: fixed;
+    content: " ";
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background: url(./../media/backgrounds/white_lines.jpg) right repeat-y fixed;
+    -webkit-background-size:cover;
+    background-size:cover;
+    top: 0;
+    left: 0;
+}
+
+header.nano:before{
+    display: none;
+}
+
+.slogan{
+    position: absolute;
+    top: 220px;
+    left: 50px;
+
+    font-family: EnterpriseT, hero-light, sans-serif;
+    font-weight: lighter;
+    font-size: 60px;
+}
+
+.slogan span{
+    display: block;
+    font-size: 0.4em;
 }
 
 /* Fonts */
@@ -26,6 +63,17 @@ p{
 @font-face {
     font-family: hero-light;
     src: url(../fonts/hero/Hero-Light.otf);
+}
+
+@font-face {
+    font-family: EnterpriseT;
+    src: url(../fonts/enterpriseT/Skynet.EnterpriseT.otf) format('otf');
+    src: url('../fonts/enterpriseT/skynet.enterpriset-webfont.eot'),
+    url('../fonts/enterpriseT/skynet.enterpriset-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/enterpriseT/skynet.enterpriset-webfont.woff2') format('woff2'),
+    url('../fonts/enterpriseT/skynet.enterpriset-webfont.woff') format('woff'),
+    url('../fonts/enterpriseT/skynet.enterpriset-webfont.ttf') format('truetype'),
+    url('../fonts/enterpriseT/skynet.enterpriset-webfont.svg#skynet.enterpriseregular') format('svg');
 }
 
 /* Titles */
@@ -129,6 +177,7 @@ footer{
     width: 100%;
     text-align: center;
     font-size: 0.6em;
+    cursor: pointer;
 }
 
 #contact{
@@ -147,6 +196,7 @@ footer{
     display: block;
     height: 40px;
     width: 40px;
+    cursor: pointer;
 }
 
 .facebook{
@@ -309,4 +359,20 @@ li{
     padding: 5px;
     border: 1px #f68739 solid;
     border-radius: 5px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* VPC */
+#viewportchecker{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+    z-index: 1000000;
 }
