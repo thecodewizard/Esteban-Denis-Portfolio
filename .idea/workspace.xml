@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e67112b5-e80a-433b-9561-1fabcc894aa2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/changelog.html" afterPath="$PROJECT_DIR$/changelog.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/internship.html" afterPath="$PROJECT_DIR$/internship.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/glados.js" afterPath="$PROJECT_DIR$/scripts/glados.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/glados.css" afterPath="$PROJECT_DIR$/styles/glados.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/glados_viewports.css" afterPath="$PROJECT_DIR$/styles/glados_viewports.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +17,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="16762">
+              <caret line="986" column="73" lean-forward="true" selection-start-line="986" selection-start-column="73" selection-end-line="986" selection-end-column="73" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#article#0;n#div#1;n#article#0;n#div#4;n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#article#1;n#div#1;n#article#0;n#div#4;n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -72,7 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>smooth</find>
       <find>notmobile</find>
       <find>768</find>
       <find>onlyportrait</find>
@@ -102,6 +95,7 @@
       <find>./media/showcase/hd</find>
       <find>hotf</find>
       <find>mythings</find>
+      <find>cma_loading</find>
     </findStrings>
     <replaceStrings>
       <replace>jpg</replace>
@@ -124,10 +118,10 @@
         <option value="$PROJECT_DIR$/styles/glados_international.css" />
         <option value="$PROJECT_DIR$/internship.html" />
         <option value="$PROJECT_DIR$/styles/glados.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/styles/glados_viewports.css" />
         <option value="$PROJECT_DIR$/changelog.html" />
         <option value="$PROJECT_DIR$/scripts/glados.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -162,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -205,6 +198,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -326,11 +320,12 @@
       <workItem from="1496118641719" duration="359000" />
       <workItem from="1496121584498" duration="99000" />
       <workItem from="1496140718349" duration="8273000" />
+      <workItem from="1496150740479" duration="40000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188120000" />
+    <option name="totallyTimeSpent" value="188160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -844,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4590">
           <caret line="270" column="25" lean-forward="true" selection-start-line="270" selection-start-column="25" selection-end-line="270" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -852,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2176">
           <caret line="128" column="22" lean-forward="true" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="16762">
+          <caret line="986" column="73" lean-forward="true" selection-start-line="986" selection-start-column="73" selection-end-line="986" selection-end-column="73" />
           <folding>
             <element signature="n#style#0;n#div#0;n#article#0;n#div#1;n#article#0;n#div#4;n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#article#1;n#div#1;n#article#0;n#div#4;n#section#2;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
