@@ -283,6 +283,7 @@ footer{
 
 .facebook, .linkedin, .github, .gmail, .whatsapp, .chrome, .download, .safari, .edge, .ie, .firefox, .opera{
     background-size: contain;
+    cursor: pointer;
 }
 
 /* Main */
