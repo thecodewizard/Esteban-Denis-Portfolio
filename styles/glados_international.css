@@ -49,6 +49,10 @@
     max-height: 350px;
     object-fit: contain;
     margin: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .slideshow-item[data-size="portrait"].browsersupport img{

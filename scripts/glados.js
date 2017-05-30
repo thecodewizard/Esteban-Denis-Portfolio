@@ -85,6 +85,9 @@
                     //The loop after the current item was set invisible, set the item visible.
                     slideshow_items[i].classList.add('visible');
                     visible = 2;
+
+                    //Preload the images
+                    preloadInternshipImages(i);
                 }
             }
             //If the item that was set invisible was the last in the loop, set the first visible
@@ -102,6 +105,9 @@
                     //The loop after the current item was set invisible, set the item visible.
                     slideshow_items[i - 1].classList.add('visible');
                     visible = 2;
+
+                    //Preload the images
+                    preloadInternshipImages(i);
                 }
             }
             //If the item that was set invisible was the last in the loop, set the last visible
@@ -214,6 +220,9 @@
                 nxt_ai = activeIndex + 1;
             }
 
+            // Preload the image that is next in queue.
+            preloadImage(images[nxt_ai + 1]);
+
             // Do the change
             if(curr_img.classList.contains('focus')) curr_img.classList.remove('focus');
             if(!nxt_img.classList.contains('focus')) nxt_img.classList.add('focus');
@@ -254,7 +263,7 @@
 
         function set_fixed_plane_height(height){
             var startheight = internship.offsetTop + 1000;
-            var endheight = future.offsetTop + 550;
+            var endheight = future.offsetTop + 450;
 
             if((height > (startheight - 50)) && (height < endheight)){
                 var diff = height - startheight;
@@ -324,6 +333,69 @@
             }
         }
 
+        // Image loading
+        function preloadImages(){
+            // Get all the images
+            var images = document.getElementsByTagName('img');
+            for(var i=0;i<images.length;i++){
+                var image = images[i];
+
+                // Do not preload the invisible internship images or profile pictures
+                var isProfilePicture = image.parentNode.id === "profile-pictures";
+                var isInternshipPicture = image.parentNode.classList.contains('slideshow-item');
+                var isActiveInternshipPicture = image.parentNode.classList.contains('visible');
+
+                if((!isProfilePicture && !isInternshipPicture) || isActiveInternshipPicture)
+                    preloadImage(images[i]);
+            }
+
+            // Preload the current active profilepictures
+            var current = profile_pictures.getElementsByClassName('focus')[0];
+            if(body.offsetWidth >= 768){
+                preloadImage(current);
+                preloadImage(current.previousElementSibling);
+                preloadImage(current.nextElementSibling);
+            } else {
+                preloadImage(current)
+            }
+
+            preloadInternshipImages(0); // Given that the active image is the first in the list by default
+        }
+
+        function preloadInternshipImages(i){
+            // Preload the correct images
+            if((i + 1) >= slideshow_items.length){
+                preloadImage(slideshow_items[0].getElementsByTagName('img')[0]);
+            } else {
+                preloadImage(slideshow_items[i + 1].getElementsByTagName('img')[0]);
+            }
+            if((i - 1) < 0){
+                preloadImage(slideshow_items[slideshow_items.length - 1].getElementsByTagName('img')[0]);
+            } else {
+                preloadImage(slideshow_items[i - 1].getElementsByTagName('img')[0]);
+            }
+        }
+
+        function preloadImage(image)
+        {
+            // Set Timeout for Async Behaviour.
+            setTimeout(function(){
+                // Load image if a source is supplied.
+                if(image.hasAttribute("data-src")){
+                    var url = image.getAttribute("data-src");
+
+                    // Only load if the requested source is not yet applied to the image.
+                    if(url !== image.src){
+                        var img = new Image();
+                        img.src=url;
+                        img.onload = function(){
+                            image.src = img.src;
+                        };
+                    }
+                }
+            }, 0);
+        }
+
         // General Functions
         function startupScript(){
             //Event Listeners
@@ -372,6 +444,7 @@
 
             // Execute functions for all viewports
             enableBrowsersupport();
+            preloadImages();
         }
 
         function scrollingScripts(){

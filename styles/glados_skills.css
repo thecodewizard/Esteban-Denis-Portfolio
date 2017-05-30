@@ -144,6 +144,11 @@
     width: 30px;
 }
 
+.showcase p a{
+    color: #f68739;
+    display: inline;
+    text-decoration: none;
+}
 
 #skills-coding .showcase > article > div h4,
 #skills-coding .showcase > article > div p{

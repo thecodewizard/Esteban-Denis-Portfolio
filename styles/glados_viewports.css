@@ -713,6 +713,8 @@
 
     #skills{
         background: linear-gradient(to bottom, transparent, #3c3f41 2%, #3c3f41 99%, transparent);
+        margin: 0 5%;
+        width: 90%;
     }
 
     #skills-soft, #skills-networking{
@@ -847,14 +849,22 @@
         margin-bottom: 100px;
     }
 
-    #future p{
-        padding: 0 200px;
+
+    #future{
+        background: rgba(60, 63, 65, 0.9);
+        margin: 100px 0 40px 15%;
+        width: 40%;
+        padding: 20px 0;
     }
 
-    #future ul{
-        width: 50%;
-        margin: auto;
-    }
+    /*#future p{*/
+        /*padding: 0 200px;*/
+    /*}*/
+
+    /*#future ul{*/
+        /*width: 50%;*/
+        /*margin: auto;*/
+    /*}*/
 
     #contact > div{
         padding: 0 200px;

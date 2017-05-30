@@ -19,6 +19,10 @@ body{
     position: relative;
 }
 
+#viewportchecker{
+    display: none;
+}
+
 p{
     color: white;
     font-family: sans-serif;
