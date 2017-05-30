@@ -13,7 +13,7 @@
     display: none;
 }
 
-.onlyportrait, .onlymobile{
+.onlyportrait, .onlymobile, .notbigcomputer{
     display: block;
 }
 
@@ -651,6 +651,10 @@
 @media (min-width: 1200px){
     #viewportchecker{
         background: purple;
+    }
+
+    .notbigcomputer{
+        display: none;
     }
 
     .onlybigcomputer{

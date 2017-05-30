@@ -23,6 +23,30 @@ body{
     display: none;
 }
 
+#imgHolder{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(60, 63, 65, 0.6);
+    z-index: 100000;
+}
+
+.enlarged #imgHolder{
+    display: flex;
+}
+
+#imgHolder img{
+    max-width: 90vw;
+    max-height: 80vh;
+    margin: auto;
+}
+
 p{
     color: white;
     font-family: sans-serif;
@@ -211,36 +235,53 @@ footer{
 
 .facebook{
     background: url(./../media/logos/fb/FB-f-Logo__blue_50.png) center no-repeat;
-    background-size: contain;
 }
 
 .linkedin{
     background: url(./../media/logos/linkedIn/2-Color/In-2C-41px-R.png) center no-repeat;
-    background-size: contain;
 }
 
 .github{
     background: url(./../media/logos/github/GitHub-Mark-Light-64px.png) center no-repeat;
-    background-size: contain;
 }
 
 .gmail{
     background: url(./../media/logos/google/logo_gmail_48px.png) center no-repeat;
-    background-size: contain;
 }
 
 .whatsapp{
     background: url(./../media/logos/whatsapp/WhatsApp_Logo_46.png) center no-repeat;
-    background-size: contain;
 }
 
 .chrome{
     background: url(./../media/logos/google/chrome_100.png) center no-repeat;
-    background-size: contain;
 }
 
 .download{
     background: url(./../media/logos/download.png) center no-repeat;
+}
+
+.safari{
+    background: url(./../media/logos/browser/safari.png) center no-repeat;
+}
+
+.edge{
+    background: url(./../media/logos/browser/edge.png) center no-repeat;
+}
+
+.ie{
+    background: url(./../media/logos/browser/ie.png) center no-repeat;
+}
+
+.firefox{
+    background: url(./../media/logos/browser/firefox.png) center no-repeat;
+}
+
+.opera{
+    background: url(./../media/logos/browser/Opera.png) center no-repeat;
+}
+
+.facebook, .linkedin, .github, .gmail, .whatsapp, .chrome, .download, .safari, .edge, .ie, .firefox, .opera{
     background-size: contain;
 }
 
@@ -356,6 +397,32 @@ article p{
 
 .btn span{
     font-weight: normal;
+}
+
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+}
+.close:hover {
+    opacity: 1;
+}
+.close:before, .close:after {
+    position: absolute;
+    left: 0;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #f68739;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
 }
 
 /* Listings */

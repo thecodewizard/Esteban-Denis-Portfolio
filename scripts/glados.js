@@ -29,6 +29,8 @@
     var showcases = sc.getElementsByTagName('article');
     var internship = document.getElementById('internship');
     var plane = document.getElementById('plane');
+    var placeholder = document.getElementsByClassName('placeholder')[0];
+    var close = document.getElementsByClassName('close')[0];
 
     //Browser Dectection Fields
         // Opera 8.0+
@@ -331,6 +333,12 @@
                 if(!sc.classList.contains('browsersupport'))
                     sc.classList.add('browsersupport');
             }
+
+            if(isOpera) changeBrowserIcon("opera");
+            else if(isFirefox) changeBrowserIcon("firefox");
+            else if(isSafari) changeBrowserIcon("safari");
+            else if(isIE) changeBrowserIcon("ie");
+            else if(isEdge) changeBrowserIcon("edge");
         }
 
         // Image loading
@@ -390,10 +398,64 @@
                         img.src=url;
                         img.onload = function(){
                             image.src = img.src;
+
+                            if(body.offsetWidth > 768 && !isIE){
+                                image.addEventListener('click', function(){
+                                    load_hd_detail(image, img.src);
+                                }, true);
+                            }
                         };
                     }
                 }
             }, 0);
+        }
+
+        function load_hd_detail(image, altsource){
+            // Set Timeout for Async Behaviour.
+            setTimeout(function(){
+                // Open the enlarged view
+                if(!placeholder.classList.contains('enlarged'))
+                    placeholder.classList.add('enlarged');
+
+                // Load image if a source is supplied.
+                if(image.hasAttribute("data-src-hd")){
+                    var url = image.getAttribute("data-src-hd");
+
+                    // Only load if the requested source is not yet applied to the image.
+                    if(url !== image.src){
+                        var img = new Image();
+                        img.src=url;
+                        img.onload = function(){
+                            image.src = img.src;
+
+                            // Also paste on the details view
+                            placeholder.getElementsByTagName('img')[0].src = img.src;
+                        };
+                    } else {
+                        placeholder.getElementsByTagName('img')[0].src = image.src;
+                    }
+                } else {
+                    placeholder.getElementsByTagName('img')[0].src = altsource;
+                }
+            }, 0);
+        }
+
+        function changeBrowserIcon(classname){
+            // Get the browser Icons
+            var browserIcons = document.getElementsByClassName('chrome');
+            console.log(browserIcons);
+
+            // Replace
+            for(var i=0; i<browserIcons.length; i++){
+                var bI = browserIcons[i];
+                bI.classList.add(classname);
+            }
+        }
+
+        function removeEnlargement(){
+            if(placeholder.classList.contains('enlarged'))
+                placeholder.classList.remove('enlarged');
+            placeholder.getElementsByTagName('img')[0].src = "./media/loading.gif";
         }
 
         // General Functions
@@ -403,6 +465,8 @@
             arrow_left.addEventListener("click", function(){goto_previous_slideshow_item();}, true);
             arrow_right.addEventListener("click", function (){goto_next_slideshow_item();}, true);
             legal.addEventListener("click", function(){open_changelog();}, true);
+            close.addEventListener("click", function(){removeEnlargement();}, true);
+            placeholder.addEventListener("click", function(){removeEnlargement();}, false);
             window.addEventListener("orientationchange", function(){recalculate_container_heights();}, false);
             window.addEventListener("scroll", function(){scrollingScripts();}, false);
 
@@ -457,6 +521,9 @@
                 set_fixed_header_height(yscroll);
                 set_fixed_plane_height(yscroll);
             }
+
+            // Stop the enlarged image
+            removeEnlargement();
         }
 
     // Startup Functions
