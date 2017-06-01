@@ -529,12 +529,12 @@
         width: 40%;
     }
 
-    #phpskill .circle > div:nth-child(1), #phpskill .circle > div:nth-child(2){
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-    }
+    /*#phpskill .circle > div:nth-child(1), #phpskill .circle > div:nth-child(2){*/
+        /*-webkit-transform: rotate(45deg);*/
+        /*-moz-transform: rotate(45deg);*/
+        /*-ms-transform: rotate(45deg);*/
+        /*-o-transform: rotate(45deg);*/
+    /*}*/
 
     *::-webkit-scrollbar-track
     {
